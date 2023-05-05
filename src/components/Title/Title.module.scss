@@ -1,0 +1,16 @@
+.title{
+  text-align: center;
+  margin: 50px 0;
+  position: relative;
+  &::before{
+    content: "";
+    left: 50%;
+    width: 70px;
+    height: 5px;
+    margin-left: -2.1875rem;
+    bottom: -0.9375rem;
+    background-color: rgba(0,0,0,.2);
+    border-radius: 4px;
+    position: absolute;
+  }
+}
