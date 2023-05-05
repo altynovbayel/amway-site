@@ -1,0 +1,12 @@
+.catalog{
+
+  .container{
+    max-width: 1170px;
+    margin: 100px auto;
+    .row_cards{
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+  }
+}

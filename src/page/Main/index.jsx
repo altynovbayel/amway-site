@@ -1,13 +1,15 @@
 import React from 'react';
 import c from './Main.module.scss'
-import Title from "../../components/Title";
+import Catalog from "../../components/Catalog";
+import Contacts from "../../components/Contacts";
 
 
 function Main() {
   return (
     <div className={c.main}>
-      <Title title={'КАТАЛОГ ТОВАРОВ'}/>
-      
+      <Catalog/>
+      <span></span>
+      <Contacts/>
     </div>
   );
 }

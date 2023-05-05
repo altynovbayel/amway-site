@@ -42,8 +42,11 @@ function Navbar() {
           <ul>
             {
               navlist.map(item => (
-                <li>
-                  <NavLink to={item.route}>
+                <li key={item.id} >
+                  <NavLink
+                    to={item.route}
+                    className={({ isActive }) => (isActive ? c.active_route : c.inactive_route)}
+                  >
                     {item.title}
                   </NavLink>
                 </li>

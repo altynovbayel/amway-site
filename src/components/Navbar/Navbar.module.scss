@@ -54,6 +54,18 @@
         padding: 20px 0;
         li{
           font-size: 12px;
+          transition: 1s;
+          color: #555555;
+          .active_route{
+            border-bottom: 1px solid black;
+            color: black;
+          }
+          .inactive_route{
+            &:hover{
+              border-bottom: 1px solid black;
+            }
+          }
+
         }
         .basket{
           cursor: pointer;

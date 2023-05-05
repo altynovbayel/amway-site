@@ -3,9 +3,9 @@ import c from './Title.module.scss'
 
 function Title({title}) {
   return (
-    <h2 className={c.title}>
+    <h1 className={c.title}>
       {title}
-    </h2>
+    </h1>
   );
 }
 
