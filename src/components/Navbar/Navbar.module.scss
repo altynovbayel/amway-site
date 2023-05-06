@@ -9,10 +9,16 @@
     align-items: center;
     padding: 10px 0;
     color: #555555;
+    @media (max-width: 1024px) {
+      padding: 10px 20px;
+    }
     .phone{
       svg{
         width: 15px;
         height: 15px;
+        @media (max-width: 768px) {
+          margin-left: 5px;
+        }
       }
       a{
         padding: 0 10px;
@@ -29,6 +35,7 @@
           width: 20px;
           height: 20px;
         }
+        
       }
       .message, .callback{
         display: flex;
@@ -39,6 +46,9 @@
       span{
         padding: 0 10px;
         font-size: 13px;
+        @media (max-width: 768px) {
+          display: none;
+        }
       }
     }
   }
@@ -53,11 +63,25 @@
         justify-content: end;
         gap: 40px;
         padding: 20px 0;
+        @media (max-width: 768px){
+          justify-content: space-between;
+        }
+        .bars{
+          font-size: 15px;
+          display: none;
+          @media (max-width: 768px){
+            display: block;
+            margin-left: 15px;
+          }
+        }
         li{
           font-size: 12px;
           font-weight: bold;
           transition: 1s;
           color: #555555;
+          @media (max-width: 768px){
+            display: none;
+          }
           .active_route{
             border-bottom: 1px solid black;
             color: black;
