@@ -2,6 +2,9 @@
   width: 25%;
   padding: 0 15px;
   margin-bottom: 45px;
+  @media (max-width: 425px) {
+    width: 250px;
+  }
 
   img{
     width: 100%;

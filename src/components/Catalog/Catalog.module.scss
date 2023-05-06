@@ -1,5 +1,4 @@
 .catalog{
-
   .container{
     max-width: 1170px;
     margin: 100px auto;
@@ -8,6 +7,9 @@
       display: flex;
       align-items: center;
       flex-wrap: wrap;
+      @media (max-width: 425px) {
+        justify-content: center;
+      }
     }
   }
 }

@@ -9,6 +9,10 @@
       width: 50%;
       display: flex;
       gap: 30px;
+      @media (max-width: 425px) {
+        flex-direction: column;
+        align-items: center;
+      }
       .title{
         display: flex;
         gap: 10px;

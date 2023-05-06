@@ -1,6 +1,6 @@
 import React from 'react';
 import c from './Navbar.module.scss'
-import {FaPhoneAlt} from "react-icons/fa";
+import {FaBars, FaPhoneAlt} from "react-icons/fa";
 import {CgMail} from "react-icons/cg";
 import {navlist} from "../../utils/list";
 import {NavLink} from "react-router-dom";
@@ -40,6 +40,9 @@ function Navbar() {
       <div className={c.navlist}>
         <div className={c.container}>
           <ul>
+            <li className={c.bars}>
+              <FaBars />
+            </li>
             {
               navlist.map(item => (
                 <li key={item.id} >
