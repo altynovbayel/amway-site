@@ -15,10 +15,12 @@ const GoodsCard = ({image, title, price, id}) => {
           <SlBasket/> В КОРЗИНУ
         </button>
       </div>
-      <Link to={`/products/${id}/`}>
-        <h4>{title}</h4>
-      </Link>
-      <h3>{price} ₽</h3>
+      <div className={c.details}>
+        <Link to={`/products/${id}/`}>
+          <h4>{title}</h4>
+        </Link>
+        <h3>{price} ₽</h3>
+      </div>
     </div>
   )
 }
