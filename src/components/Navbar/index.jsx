@@ -6,8 +6,11 @@ import {navlist} from "../../utils/list";
 import {NavLink} from "react-router-dom";
 import {IoIosArrowDown} from "react-icons/io";
 import {SlBasket} from 'react-icons/sl'
+import Sidebar from '../Sidebar';
 
 function Navbar() {
+  const [active, setActive] = React.useState(false)
+
   return (
     <div className={c.navbar}>
       <div className={c.top_navbar}>
@@ -40,7 +43,10 @@ function Navbar() {
       <div className={c.navlist}>
         <div className={c.container}>
           <ul>
-            <li className={c.bars}>
+            <li
+              className={c.bars}
+              onClick={() => setActive(!active)}
+            >
               <FaBars />
             </li>
             {
@@ -63,6 +69,10 @@ function Navbar() {
           </ul>
         </div>
       </div>
+      <Sidebar 
+        active={active}
+        setActive={setActive}
+      />
     </div>
   );
 }
