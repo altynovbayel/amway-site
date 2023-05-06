@@ -1,14 +1,18 @@
 .card{
-  width: 290px;
+  width: 25%;
   padding: 0 15px;
   margin-bottom: 45px;
+
   img{
     width: 100%;
     height: 100%;
     object-fit: contain;
   }
+
   p{
     margin: 15px 0;
     font-size: 12px;
+    font-weight: bold;
   }
+
 }

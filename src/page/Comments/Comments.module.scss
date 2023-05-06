@@ -1,0 +1,26 @@
+.comments{
+  .container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+    .comments_btn{
+      text-align: center;
+      margin-top: 100px;
+      button{
+        padding: 27px 20px;
+        border: 2px solid black;
+        width: 260px;
+        color: black;
+        background-color: transparent;
+        font-weight: bold;
+        font-size: 15px;
+        transition: .3s;
+        &:hover{
+          border-color: #555555;
+          color: #555555;
+        }
+      }
+    }
+
+  }
+}

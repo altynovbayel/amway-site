@@ -1,7 +1,8 @@
 import React from 'react';
 import c from './Main.module.scss'
 import Catalog from "../../components/Catalog";
-import Contacts from "../../components/Contacts";
+import Contacts from "../Contacts";
+import Footer from "../../components/Footer";
 
 
 function Main() {
@@ -10,6 +11,8 @@ function Main() {
       <Catalog/>
       <span></span>
       <Contacts/>
+      <span></span>
+      <Footer/>
     </div>
   );
 }

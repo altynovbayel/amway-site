@@ -3,7 +3,7 @@ import { Route, Routes as Switch } from 'react-router-dom';
 import * as Layout from './page'
 import axios from "axios";
 
-axios.defaults.baseURL = 'https://amway.pythonanywhere.com/swagger/'
+axios.defaults.baseURL = 'https://amway.pythonanywhere.com/'
 
 function App() {
   return (
@@ -13,6 +13,7 @@ function App() {
         <Route path='/' element={<Layout.Main/>}/>
         <Route path='/catalog/' element={<Layout.Catalog/>}/>
         <Route path='/contacts/' element={<Layout.Contacts/>}/>
+        <Route path='/comments/' element={<Layout.Comments/>}/>
       </Switch>
     </div>
   );

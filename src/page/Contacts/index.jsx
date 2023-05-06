@@ -1,6 +1,6 @@
 import React from 'react';
 import c from './Contacts.module.scss'
-import Title from "../Title";
+import Title from "../../components/Title";
 import {FaPhoneAlt} from "react-icons/fa";
 import {ImWhatsapp} from "react-icons/im";
 
