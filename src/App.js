@@ -16,6 +16,7 @@ function App() {
         <Route path='/catalog/' element={<Layout.Goods/>}/>
         <Route path='/contacts/' element={<Layout.Contacts/>}/>
         <Route path='/comments/' element={<Layout.Comments/>}/>
+        <Route path='/products/:id' element={<Layout.More/>}/>
       </Switch>
     </div>
   );

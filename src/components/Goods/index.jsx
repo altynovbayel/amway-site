@@ -44,10 +44,20 @@ const Goods = () => {
           {
             result?.length === 0 ?
             catalogList.map(item => (
-              <CatalogCard key={item.id} title={item.title} img={item.img}/>
+              <CatalogCard 
+                key={item.id}
+                title={item.title} 
+                img={item.img}
+              />
             )) :
-            result.map(item => (
-              <GoodsCard key={item.id} title={item.title} img={item.img}/>
+            result?.map(item => (
+              <GoodsCard 
+                key={item.id} 
+                title={item.title} 
+                img={item.img} 
+                price={item.price}
+                id={item.id}
+              />
             ))
           }
         </div>
