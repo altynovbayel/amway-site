@@ -18,7 +18,9 @@ const More = () => {
 
   return (
     <div className={c.more}>
-      <Title title={product?.title}/>
+      <div className={c.title}>
+        <Title title={product?.title}/>
+      </div>
       <div className={c.details}>
         <div className={c.left}>
           <img 
