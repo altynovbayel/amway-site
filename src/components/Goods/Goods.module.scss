@@ -1,10 +1,40 @@
 .catalog{
+  .row_filter{
+    display: flex;
+    justify-content: space-between;
+    max-width: 1170px;
+    margin: 100px auto;
+    padding: 0 10px;
+    @media (max-width: 1024px) {
+      justify-content: space-around;
+    }
+    .search_filter{
+      width: 75%;
+      @media (max-width: 1024px) {
+        width: 60%;
+      }
+      @media (max-width: 768px) {
+        width: 90%;
+      }
+      .price_layout{
+        display: none;
+        @media (max-width: 768px) {
+          display: block;
+        }
+      }
+    }
+    .price_layout_2{
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+  }
   .search{
     display: flex;
     align-items: center;
     justify-content: center;
     input{
-      width: 60%;
+      width: 100%;
       max-width: 650px;
       height: 50px;
       padding: 0 15px;
@@ -38,9 +68,7 @@
     }
   }
   .container{
-    max-width: 1170px;
-    margin: 100px auto;
-    padding: 0 10px;
+    margin-top: 50px;
     .row_cards{
       display: flex;
       align-items: center;
