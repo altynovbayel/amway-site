@@ -1,0 +1,36 @@
+.more{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  .details{
+    width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .left{
+      img{
+        width: 330px;
+        height: 330px;
+        object-fit: cover;
+      }
+    }
+    .right{
+      width: 50%;
+      margin-left: 50px;
+      h1{
+        margin: 15px 0;
+      }
+      button{
+        width: 400px;
+        height: 54px;
+        background: white;
+        border: 3px solid black;
+        color: black;
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+      
+    }
+  }
+}
