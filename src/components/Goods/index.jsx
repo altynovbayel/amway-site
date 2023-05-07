@@ -13,7 +13,7 @@ const Goods = () => {
   const { products } = GetProducts()
   const [ result, setResult ] = React.useState([])
   const [values, setValues] = React.useState([0, 9500]);
-  // const [priceFiltered, setPriceFiltered] = React.useState([])
+  
   
   const priceFilter = () => {
     const res = products?.filter(el => el.price >= values[0] && el.price <= values[1])
@@ -28,7 +28,12 @@ const Goods = () => {
   const searching = (search) => {
     const res = products?.filter(item => item.title.toLowerCase().includes(search.search.toLowerCase())) 
     setResult(res);
-  }  
+  }
+  
+  React.useEffect(() => {
+    const cart = localStorage.getItem('cart')
+    !cart && localStorage.setItem('cart', JSON.stringify([]))
+  }, [])
 
   return (
     <div className={c.catalog}>
@@ -65,6 +70,7 @@ const Goods = () => {
                   )) :
                   result?.map(item => (
                     <GoodsCard
+                      obj={item}
                       key={item.id}
                       title={item.title}
                       img={item.img}

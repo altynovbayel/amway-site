@@ -10,7 +10,13 @@ import Sidebar from '../Sidebar';
 
 function Navbar() {
   const [active, setActive] = React.useState(false)
-
+  const [cartCount, setCartCount] = React.useState(0)
+  
+  React.useEffect(() => {
+    const cart = JSON.parse(localStorage.getItem('cart'))
+    cart && setCartCount(cart.length)
+  }, [])
+  
   return (
     <div className={c.navbar}>
       <div className={c.top_navbar}>
@@ -63,7 +69,7 @@ function Navbar() {
             }
             <li className={c.basket}>
               <SlBasket/>
-              <span>0</span>
+              <span>{cartCount}</span>
               <IoIosArrowDown/>
             </li>
           </ul>
