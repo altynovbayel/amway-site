@@ -3,9 +3,11 @@
     max-width: 1170px;
     margin: 100px auto;
     padding: 0 10px;
+    
     .row_cards{
       display: flex;
       align-items: center;
+      justify-content: center;
       flex-wrap: wrap;
       @media (max-width: 425px) {
         justify-content: center;
