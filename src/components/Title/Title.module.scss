@@ -3,6 +3,9 @@
   margin: 50px 0;
   position: relative;
   text-transform: uppercase;
+  @media (max-width: 425px) {
+    font-size: 25px;
+  }
   &::before{
     content: "";
     left: 50%;

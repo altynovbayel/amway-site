@@ -34,6 +34,7 @@ const More = () => {
           <button>
             <SlBasket /> В корзину
           </button>
+          <p className={c.desc}>Описание:</p>
           <p>
             {product?.description}
           </p>

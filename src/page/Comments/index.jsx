@@ -2,6 +2,7 @@ import React from 'react';
 import c from './Comments.module.scss'
 import Title from "../../components/Title";
 import ReviewCard from "../../components/ReviewCard";
+import CommentsForm from '../../components/CommentsForm';
 
 function Comments(props) {
   return (
@@ -11,6 +12,7 @@ function Comments(props) {
         <div className={c.comments_btn}>
           <button>ОСТАВИТЬ ОТЗЫВ</button>
         </div>
+        <CommentsForm />
         <div className={c.comments_cards}>
           <ReviewCard/>
           <ReviewCard/>

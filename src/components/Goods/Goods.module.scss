@@ -74,7 +74,7 @@
       align-items: center;
       flex-wrap: wrap;
       gap: 25px;
-      @media (max-width: 425px) {
+      @media (max-width: 768px) {
         justify-content: center;
       }
     }
