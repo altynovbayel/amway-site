@@ -4,11 +4,11 @@ import {SlBasket} from 'react-icons/sl'
 import {Link} from 'react-router-dom'
 
 const GoodsCard = ({image, title, price, id, obj}) => {
-  
+
   const postToCart = () => {
     const cart = JSON.parse(localStorage.getItem('cart'))
-    const check = cart.find(item => item?.id === obj?.id)
-    check === undefined && cart.push(obj)
+    const check = cart?.find(item => item?.id === obj?.id)
+    check === undefined && cart.push({...obj, count: 1})
     localStorage.setItem('cart', JSON.stringify(cart))
   }
   

@@ -33,6 +33,10 @@
       padding: 0 10px;
       text-align: right;
       margin-right: 20px;
+      @media (max-width: 425px) {
+        width: 40px;
+        text-align: center;
+      }
     }
     li{
       color: #555555;
