@@ -24,7 +24,7 @@ function Navbar() {
     getCart()
     setTimeout(() => {
       setDep(Math.random())
-    }, 2000)
+    }, 100)
   }, [dep])
   
   return (
