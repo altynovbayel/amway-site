@@ -33,17 +33,14 @@ const CommentsForm = ({active, setActive}) => {
   function handleSubmitData(event) {
     if(event.username.length !== 0 && event.comment.length !== 0 && event.captcha.length !== 0){
       if (event.captcha === captchaText) {
-        alert("Captcha passed!");
+        alert("Отзыв отправлен");
         api.postComment(event)
           .then(() => window.location.reload())
         setUsernameField(false)
         setCommentField(false)
         setCaptchaField(false)
         reset()
-      } else {
-        alert("Captcha failed!");
-
-      }
+      } 
     }
     setCaptchaText(generateCaptchaText());
   }
