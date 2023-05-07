@@ -61,23 +61,31 @@ const Goods = () => {
             <div className={c.row_cards}>
               {
                 result?.length === 0  ?
-                  catalogList.map(item => (
-                    <CatalogCard
-                      key={item.id}
-                      title={item.title}
-                      img={item.img}
-                    />
-                  )) :
-                  result?.map(item => (
-                    <GoodsCard
-                      obj={item}
-                      key={item.id}
-                      title={item.title}
-                      img={item.img}
-                      price={item.price}
-                      id={item.id}
-                    />
-                  ))
+                products?.map(item => (
+                  <GoodsCard
+                    obj={item}
+                    key={item.id}
+                    title={item.title}
+                    img={item.img}
+                    price={item.price}
+                    id={item.id}
+                  />
+                )) :
+                result?.length === 0  ?
+                  <div className={c.nothing}>
+                    <h2>Ничего нет</h2>
+                  </div> 
+                :
+                result?.map(item => (
+                  <GoodsCard
+                    obj={item}
+                    key={item.id}
+                    title={item.title}
+                    img={item.img}
+                    price={item.price}
+                    id={item.id}
+                  />
+                ))
               }
             </div>
           </div>

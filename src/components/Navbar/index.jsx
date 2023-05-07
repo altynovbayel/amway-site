@@ -3,7 +3,7 @@ import c from './Navbar.module.scss'
 import {FaBars, FaPhoneAlt} from "react-icons/fa";
 import {CgMail} from "react-icons/cg";
 import {navlist} from "../../utils/list";
-import {NavLink} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import {IoIosArrowDown} from "react-icons/io";
 import {SlBasket} from 'react-icons/sl'
 import Sidebar from '../Sidebar';
@@ -29,7 +29,7 @@ function Navbar() {
   
   return (
     <div className={c.navbar}>
-      <div className={c.top_navbar}>
+      {/* <div className={c.top_navbar}>
         <div className={c.phone}>
           <FaPhoneAlt/>
           <a  href="tel:89855018480">
@@ -55,16 +55,27 @@ function Navbar() {
           </div>
         </div>
       </div>
-      
+       */}
       <div className={c.navlist}>
         <div className={c.container}>
-          <ul>
+          <ul className={c.bars}>
             <li
-              className={c.bars}
               onClick={() => setActive(!active)}
             >
               <FaBars />
             </li>
+          </ul>
+          <div className={c.logo}>
+            <li>
+              <Link to="/">
+                <img 
+                  src="https://www.amway.com/medias/amway-logo-black.svg?context=bWFzdGVyfGltYWdlc3w0OTI1fGltYWdlL3N2Zyt4bWx8aW1hZ2VzL2g3YS9oNTYvODg4ODM0NDI0ODM1MC5zdmd8YmI0MmY2MzMxZjc2ZmVkZjAzNDAxMjhmOWRlYjYyMzc4ODJmZWQ2ZTQ1MmQ4NDA5YjM2Y2VhNDc2NjFmNzcxYg" 
+                  alt="logo"
+                />
+              </Link>
+            </li>
+          </div>
+          <ul>
             {
               navlist.map(item => (
                 <li key={item.id} >

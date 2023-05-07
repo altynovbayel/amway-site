@@ -1,0 +1,26 @@
+section{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  .footer{
+    width: 1140px;
+    position: relative;
+    padding: 20px 0;
+    @media (max-width: 1024px) {
+      width: 90%;
+    }
+    span{
+      max-width: 1170px;
+      height: 5px;
+      display: block;
+      margin: 0 auto;
+      background-image: linear-gradient(to right, #ccc 33%, rgba(255, 255, 255, 0) 0%);
+      background-position: bottom;
+      background-size: 10px 1px;
+      background-repeat: repeat-x;
+    }
+    p{
+      font-size: 12px;
+    }
+  }
+}
