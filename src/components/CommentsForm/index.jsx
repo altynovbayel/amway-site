@@ -3,7 +3,7 @@ import c from './CommentsForm.module.scss'
 import { AiOutlineClose, AiOutlineReload } from 'react-icons/ai';
 import { useForm } from 'react-hook-form';
 
-const CommentsForm = () => {
+const CommentsForm = ({active, setActive}) => {
   const [captchaText, setCaptchaText] = React.useState(generateCaptchaText());  
   const [ usernameField, setUsernameField ] = React.useState(false)
   const [ commentField, setCommentField ] = React.useState(false)
@@ -50,7 +50,10 @@ const CommentsForm = () => {
       className={c.commentsForm}
       onSubmit={handleSubmit(data => handleSubmitData(data))}
     >
-      <li className={c.close}>
+      <li 
+        className={c.close}
+        onClick={() => setActive(false)}
+      >
         <AiOutlineClose />
       </li>
       <div>
