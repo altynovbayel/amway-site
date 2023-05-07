@@ -8,7 +8,8 @@ const GoodsCard = ({image, title, price, id, obj}) => {
   const postToCart = () => {
     const cart = JSON.parse(localStorage.getItem('cart'))
     const check = cart?.find(item => item?.id === obj?.id)
-    check === undefined && cart.push({...obj, count: 1})
+    const index = cart.findIndex(obj => obj.id === id);
+    !check ? cart.push({...obj, count: 1}) : cart[index].count = cart[index].count + 1;
     localStorage.setItem('cart', JSON.stringify(cart))
   }
   

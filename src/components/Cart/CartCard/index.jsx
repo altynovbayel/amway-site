@@ -3,11 +3,20 @@ import c from './CartCard.module.scss'
 import { BiTrash } from 'react-icons/bi'
 
 const CartCard = ({item}) => {
+  const cart = JSON.parse(localStorage.getItem('cart'))
+
   const changeCount = (count) => {
-    const cart = JSON.parse(localStorage.getItem('cart'))
     const index = cart.findIndex(obj => obj.id === item.id);
     if (index !== -1) {
       cart[index].count = count;
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }
+
+  const deleteItem = () => {
+    const index = cart?.findIndex(obj => obj.id === item.id);
+    if (index !== -1) {
+      cart.splice(index, 1);
     }
     localStorage.setItem('cart', JSON.stringify(cart));
   }
@@ -23,10 +32,12 @@ const CartCard = ({item}) => {
       <div className={c.right}>
         <input 
           type="text"
-          defaultValue={item.count}
+          value={item.count}
           onChange={e => changeCount(Number(e.target.value))}
         />
-        <li>
+        <li
+          onClick={() => deleteItem()}
+        >
           <BiTrash />
         </li>
       </div>
