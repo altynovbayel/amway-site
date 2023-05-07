@@ -4,6 +4,7 @@ import * as Layout from './page'
 import axios from "axios";
 import { api } from "./config/api";
 import React from "react";
+import Footer from "./components/Footer";
 axios.defaults.baseURL = 'https://amway.pythonanywhere.com'
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path='/comments/' element={<Layout.Comments/>}/>
         <Route path='/products/:id' element={<Layout.More/>}/>
       </Switch>
+      <Footer />
     </div>
   );
 }

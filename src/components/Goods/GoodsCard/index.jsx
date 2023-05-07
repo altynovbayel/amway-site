@@ -2,33 +2,83 @@ import React from 'react'
 import c from './GoodsCard.module.scss'
 import {SlBasket} from 'react-icons/sl'
 import {Link} from 'react-router-dom'
+import { BiMinus, BiPlus } from 'react-icons/bi'
 
 const GoodsCard = ({image, title, price, id, obj}) => {
+  const [ active, setActive ] = React.useState(false)
+  const [ dep, setDep ] = React.useState('')
+
+  const cart = JSON.parse(localStorage.getItem('cart'))
+  const check = cart?.find(item => item?.id === obj?.id)
+  const index = cart.findIndex(obj => obj.id === id);
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      const check = cart?.find(item => item?.id === obj?.id)
+      check ? setActive(true) : setActive(false)
+      setDep(Math.random())
+    }, 100)
+  }, [dep])
 
   const postToCart = () => {
-    const cart = JSON.parse(localStorage.getItem('cart'))
-    const check = cart?.find(item => item?.id === obj?.id)
-    const index = cart.findIndex(obj => obj.id === id);
+    !check ? cart.push({...obj, count: 1}) : cart[index].count = cart[index].count + 1;
+    localStorage.setItem('cart', JSON.stringify(cart))
+  }
+
+  const increment = () => {
     !check ? cart.push({...obj, count: 1}) : cart[index].count = cart[index].count + 1;
     localStorage.setItem('cart', JSON.stringify(cart))
   }
   
+  const decrement = () => {
+    if(cart[index].count !== 1){
+      !check ? cart.push({...obj, count: 1}) : cart[index].count = cart[index].count - 1;
+      localStorage.setItem('cart', JSON.stringify(cart))
+    }
+  }
+
   return (
     <div className={c.card}>
-      <div className={c.image}>
-        <img
-          src="https://i.siteapi.org/g3bBwFfNj_wNmVuAkQEJGUvYxcI=/0x0:1078x607/fit-in/250x190/center/top/filters:fill(transparent):format(webp)/5076e086ed264d4.s2.siteapi.org/img/3knfrycc34u8cgogsk0gws4sk88s00"
+      <div className={c.up}>
+        <img 
+          src="https://basket-06.wb.ru/vol1024/part102496/102496879/images/c246x328/3.jpg" 
           alt=""
         />
-        <button onClick={postToCart}>
-          <SlBasket/> В КОРЗИНУ
-        </button>
+        <p>
+          {title.length > 55 ? `${title.slice(0, 55)}...` : title}
+        </p>
       </div>
-      <div className={c.details}>
-        <Link to={`/products/${id}/`}>
-          <h4>{title}</h4>
-        </Link>
+      <div className={c.down}>
         <h3>{price} ₽</h3>
+        {
+          active ?
+            <div className={c.quantity}>
+              <h4>Кол-во</h4>
+              <ul>
+                <li
+                  onClick={() => decrement()}
+                >
+                  <BiMinus />
+                </li>
+                <input 
+                  type="text"
+                  value={cart[index]?.count ? cart[index]?.count : 1}  
+                />
+                <li
+                  onClick={() => increment()}
+                >
+                  <BiPlus />
+                </li>
+              </ul>
+            </div>
+          :
+          null
+        }
+        <button
+          onClick={() => postToCart()}
+        >
+          <SlBasket /> <span>Добавить в корзину </span>
+        </button>
       </div>
     </div>
   )
