@@ -11,6 +11,7 @@ const Form = () => {
 
   function handleSend (data) {
     console.log(data);
+    reset()
   }
 
   return (
