@@ -12,8 +12,6 @@ const More = () => {
   React.useEffect(() => {
     api.getProduct(id)
       .then(res => setProduct(res.data))
-
-    console.log(product);
   }, []) 
 
   return (

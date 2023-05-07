@@ -4,6 +4,7 @@ import Main from "./Main";
 import Comments from "./Comments";
 import Goods from "../components/Goods";
 import More from "./More";
+import Order from "./Order";
 
 export {
   Contacts,
@@ -11,5 +12,6 @@ export {
   Main,
   Comments,
   Goods,
-  More
+  More,
+  Order,
 }

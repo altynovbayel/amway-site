@@ -2,12 +2,11 @@ import React from 'react'
 import Title from '../Title'
 import c from './Goods.module.scss'
 import { AiOutlineSearch } from 'react-icons/ai'
-import { catalogList } from '../../utils/list'
-import CatalogCard from '../Catalog/CatalogCard'
 import { GetProducts } from '../../helpers'
 import { useForm } from 'react-hook-form'
 import GoodsCard from './GoodsCard'
 import DoubleSlider from "../DoubleSlider";
+import Loader from "../Loader";
 
 const Goods = () => {
   const { products } = GetProducts()
@@ -59,6 +58,9 @@ const Goods = () => {
          </span>
           <div className={c.container}>
             <div className={c.row_cards}>
+              {
+                !products && <div className={c.loader}><Loader/></div>
+              }
               {
                 result?.length === 0  ?
                 products?.map(item => (

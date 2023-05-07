@@ -22,8 +22,9 @@ function Comments(props) {
             comments?.length === 0 ?
             <h1>Ничего нет</h1>
             :
-            comments?.reverse().map(item => (
-              <ReviewCard 
+            comments?.reverse().map((item, id) => (
+              <ReviewCard
+                key={id}
                 username={item.username}
                 comment={item.comment}
                 date={item.date}

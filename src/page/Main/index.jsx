@@ -3,6 +3,7 @@ import c from './Main.module.scss'
 import Catalog from "../../components/Catalog";
 import Contacts from "../Contacts";
 import Form from '../../components/Form';
+import Brands from "../../components/Brands";
 
 
 function Main() {
@@ -10,7 +11,7 @@ function Main() {
     <div className={c.main}>
       <Catalog/>
       <Form />
-      <span></span>
+      <Brands/>
       <Contacts/>
       <span></span>
     </div>

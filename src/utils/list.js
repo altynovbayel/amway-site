@@ -21,6 +21,24 @@ export const navlist = [
   },
 ]
 
+export const brandsList = [
+  'https://www.kz.amway.com/common/medias/carousel-1661-artistry.png?context=bWFzdGVyfHJvb3R8MzIyMHxpbWFnZS9wbmd8aDJmL2hkNS85NzQ5MjMxNjk3OTUwLnBuZ3w1ZTY3YWQ2YmIxNTMzZTExOTc2MGRiZDRkMTc0OWNiZDcxZjk1YTEyMWE4NjlkNTRiMGIwYTIxNGY1MDIwNTgy&ccv=Qy1LQVotUw==',
+  'https://www.kz.amway.com/common/medias/carousel-165-nutrilite.png?context=bWFzdGVyfHJvb3R8MjQyM3xpbWFnZS9wbmd8aDg5L2g5Zi85NzQ5MTkwODAzNDg2LnBuZ3wxODRmMDBjN2JmZWU3MjhjNTY3NDM3YjkzY2ZmOGZlMTYxNjQ3ZjkwYzllYzkwOGY3YzVjZmQzMjViY2Q0MTRm&ccv=Qy1LQVotUw==',
+  'https://www.kz.amway.com/common/medias/carousel-165-icook.png?context=bWFzdGVyfHJvb3R8NTY5MHxpbWFnZS9wbmd8aDgxL2g1OC85NzQ5MTkxOTgzMTM0LnBuZ3xhZTMzMDQ4NmFjYjY3ZGRhYTNlZmU3ZmY1MmNkNzM4Yjg1ZDc0NjAxMWQzNjhlM2M3NTNlMmEzZWI0Y2RlNGFm&ccv=Qy1LQVotUw==',
+  'https://www.kz.amway.com/common/medias/carousel-165-amwayhome.png?context=bWFzdGVyfHJvb3R8NjIzMnxpbWFnZS9wbmd8aDVlL2hhNS85NzQ5MTg5OTE4NzUwLnBuZ3w1ZDZlNTYzNGM2YmYzNjZjN2IxZDZhYmM0M2NhYTY3ZjhkYmQ2YTc1ZmMzNzYwY2ZjOWE5ODY4N2U5NWM5YzQ5&ccv=Qy1LQVotUw==',
+  'https://www.kz.amway.com/common/medias/carousel-165-xs.png?context=bWFzdGVyfHJvb3R8MTk5MXxpbWFnZS9wbmd8aDc5L2hjOC85NzQ5MTkyODY3ODcwLnBuZ3w2YmIyNjUwMzU3ZWU0M2MzN2MxMTdlNTM1ZjJlY2U5MjA4YzgxOWE5ZGE0ZTAxMGIyMmM0MTA5OTQ3NTIyZWE3&ccv=Qy1LQVotUw==',
+  'https://www.kz.amway.com/common/medias/carousel-165-espring.png?context=bWFzdGVyfHJvb3R8MzU2NnxpbWFnZS9wbmd8aGQzL2hjNS85NzQ5MTg4OTY4NDc4LnBuZ3w2NmM5ZjA0NDlkOTZjZjNlMDJjZjgzNTFmOTQxYWQ4YzYxNWUwNjNhNzQ4NmQ1OGMwMWI4OGM3MzhiNjZhYzQx&ccv=Qy1LQVotUw==',
+  'https://www.kz.amway.com/common/medias/carousel-165-dermasonic.png?context=bWFzdGVyfHJvb3R8NjAyNHxpbWFnZS9wbmd8aDBhL2hkZi85NzQ5MTkwMjEzNjYyLnBuZ3w4MTUxY2FjZGY1NTJmZGQ3YThlOWRlZjg5NGY3NmFlYTBhZTRjZDAyY2QxYzE1N2I1YjllOTA4NTBmMWFiMDdm&ccv=Qy1LQVotUw==',
+  'https://www.kz.amway.com/common/medias/carousel-165-bodykey.png?context=bWFzdGVyfHJvb3R8MzAyNHxpbWFnZS9wbmd8aDQyL2gyNi85NzQ5MTg5MzI4OTI2LnBuZ3xiOTAzZjg4N2VjNTYzNjU5ZmUxYzk2MzRlYzEzMTViOThhM2IxMWJmMzE1ZTUwOTk1OTUxODFlODhlMzEzZGE0&ccv=Qy1LQVotUw==',
+  'https://www.kz.amway.com/common/medias/carousel-165-glister.png?context=bWFzdGVyfHJvb3R8MjE4NHxpbWFnZS9wbmd8aGVhL2gyOC85NzQ5MTkxMzkzMzEwLnBuZ3wwYmMyMTI5NzdlYTY2MWQ5ODUzODYyMDQyZDgzOGE5MTk0YjY2YTNjYTk5YzQ3YzNjYmVmMzE3OTU4YWRkMzY4&ccv=Qy1LQVotUw==',
+  'https://www.kz.amway.com/common/medias/carousel-165-truvity.png?context=bWFzdGVyfHJvb3R8MzE2NnxpbWFnZS9wbmd8aGE0L2gwYS85NzQ5MTkyMjc4MDQ2LnBuZ3w2N2QxM2YwMTFhMmE1OTY5YjUyNDhhYmRkOTcxZDZlNmVjMTk1YWEwZTM1N2FiYTQ5ZGNjN2M0MGZhNzJhOGMz&ccv=Qy1LQVotUw==',
+  'https://www.kz.amway.com/common/medias/carousel-165-satinique.png?context=bWFzdGVyfHJvb3R8MjQ2NHxpbWFnZS9wbmd8aGJiL2g2Mi85NzQ5MTkxNjg4MjIyLnBuZ3wxOTllMzBkZmIxOWU1OGNmMTZmNzMxZmY2NmQ1ZjkwMzM1NmQxZjM4YjI0YzE0ZmYyNThhYTNmOWFkNzBlZmJm&ccv=Qy1LQVotUw==',
+  'https://www.kz.amway.com/common/medias/carousel-165-gh.png?context=bWFzdGVyfHJvb3R8MTg5MHxpbWFnZS9wbmd8aDM5L2hhNS85NzQ5MTkwNTA4NTc0LnBuZ3xlMTY1MDMyYTFmOTFmZjBlMzM5MDU2ZTdlY2MyZTdhYjVkYTQyMjkxMGRmNmM0OWQ5ZjA0OTgzMWM4MzgwNDUz&ccv=Qy1LQVotUw==',
+  'https://www.kz.amway.com/common/medias/carousel-165-hymm.png?context=bWFzdGVyfHJvb3R8MzY5MHxpbWFnZS9wbmd8aDJjL2g5YS85NzQ5MTkxMDk4Mzk4LnBuZ3xmMTkzNzVmOTllODExNzE1NzdkMWZjMmQ0OGM4NDY4Y2U2YjdmNmY4NWMyNDc2NGJiN2U1NmU4N2M5MjkyNWQ3&ccv=Qy1LQVotUw==',
+  
+  
+]
+
 export const catalogList = [
   {
     id:1,

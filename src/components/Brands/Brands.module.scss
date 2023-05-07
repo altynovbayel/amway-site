@@ -1,0 +1,18 @@
+.brands{
+  max-width: 1170px;
+  margin: 100px auto;
+  padding: 0 10px;
+  .my_swiper{
+
+  }
+  :global(.swiper-button-next:after) {
+    color: #002F5F;
+    font-size: 20px;
+    margin-left: 30px;
+  }
+  :global(.swiper-button-prev:after) {
+    color: #002F5F;
+    font-size: 20px;
+    margin-right: 30px;
+  }
+}

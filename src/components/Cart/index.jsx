@@ -1,10 +1,17 @@
 import React from 'react'
 import c from './Cart.module.scss'
 import CartCard from './CartCard'
+import {useNavigate} from "react-router-dom";
 
 const Cart = ({setActiveCart}) => {
   const [ cart, setCart ] = React.useState(null)
   const [ dep, setDep ] = React.useState(null)
+  const navigate = useNavigate()
+  
+  const toCartPage = () => {
+    navigate('/cart/')
+    setActiveCart(false)
+  }
 
   React.useEffect(() => {
     setTimeout(() => {
@@ -40,7 +47,7 @@ const Cart = ({setActiveCart}) => {
         >
           продолжить покупки
         </button>
-        <button>
+        <button onClick={toCartPage}>
           оформить заказ
         </button>
       </div>

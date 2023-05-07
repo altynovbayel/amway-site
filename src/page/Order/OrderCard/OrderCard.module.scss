@@ -1,0 +1,109 @@
+.product_card{
+  display: flex;
+  margin-top: 10px;
+  align-items: center;
+  justify-content: space-between;
+  @media (max-width: 425px){
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+  img{
+    padding: 20px 0 20px 10px;
+    width: 95px;
+    margin-right: 20px;
+  }
+  .product_name{
+    padding: 20px 30px 20px 0;
+    width: 500px;
+    @media (max-width: 768px) {
+      width: 300px;
+      padding-right: 10px;
+    }
+    @media (max-width: 375px) {
+      width: 90%;
+    }
+    p{
+      font-weight: bold;
+      font-size: 15px;
+      @media (max-width: 768px){
+        line-height: 20px;
+      }
+    }
+    span{
+      font-size: 12px;
+      color: #888888;
+    }
+  }
+  .price{
+    color: #555;
+    font-size: 14px;
+  }
+  .count{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-left: auto;
+    gap: 10px;
+    width: 200px;
+    @media (max-width: 1024px) {
+      width: 120px;
+    }
+    @media (max-width: 768px){
+      width: 100px;
+    }
+
+    svg{
+      cursor: pointer;
+    }
+    input{
+      padding: 8px 10px;
+      background-color: #EAEAEA;
+      width: 50px;
+      outline: none;
+      text-align: right;
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+  .total_price{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 10px;
+    width: 200px;
+    @media (max-width: 1024px){
+      width: 150px;
+    }
+    @media (max-width: 768px){
+      width: 150px;
+    }
+    @media (max-width: 425px){
+      width: 130px;
+    }
+    span{
+      svg{
+        color: #FF4C76;
+        cursor: pointer;
+        font-size: 19px;
+        &:hover{
+          color: red;
+        }
+      }
+    }
+  }
+  .product_title{
+    display: flex;
+  }
+  .product_price{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    @media (max-width: 425px){
+      gap: 20px;
+    }
+  }
+}

@@ -24,6 +24,10 @@ button{
   cursor: pointer;
 }
 
+input{
+  border: none;
+}
+
 @font-face {
   font-family: "Rubik", sans-serif;
   src: url("./fonts/Rubik-Regular.ttf") format("truetype");

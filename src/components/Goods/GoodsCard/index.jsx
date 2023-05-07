@@ -56,7 +56,7 @@ const GoodsCard = ({image, title, price, id, obj}) => {
               <h4>Кол-во</h4>
               <ul>
                 <li
-                  onClick={() => decrement()}
+                  onClick={decrement}
                 >
                   <BiMinus />
                 </li>
@@ -65,7 +65,7 @@ const GoodsCard = ({image, title, price, id, obj}) => {
                   value={cart[index]?.count ? cart[index]?.count : 1}  
                 />
                 <li
-                  onClick={() => increment()}
+                  onClick={increment}
                 >
                   <BiPlus />
                 </li>
