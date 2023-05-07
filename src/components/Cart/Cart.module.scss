@@ -1,0 +1,44 @@
+.cart{
+  width: 600px;
+  height: auto;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background: white;
+  box-shadow: 0 4px 5px 0 rgb(0 0 0 / 11%), 0 1px 10px 0 rgb(0 0 0 / 12%), 0 2px 4px -1px rgb(0 0 0 / 20%);
+  padding: 1.25rem;
+  max-height: 31.25rem;
+  max-width: 37.5rem;
+  min-width: 31.25rem;
+  z-index: 10;
+  .btns{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 25px;
+    &::before{
+      content: '';
+      width: 0;
+      bottom: 0;
+      left: 0;
+    }
+    button{
+      width: 50%;
+      height: 72px;
+      font-size: .9375rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: bold;
+      background: none;
+      color: #555555;
+      &:nth-child(2){
+        border: 3px solid black;
+        color: black;
+        transition: .3s;
+        &:hover{
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+}
