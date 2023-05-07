@@ -7,9 +7,11 @@ import {NavLink} from "react-router-dom";
 import {IoIosArrowDown} from "react-icons/io";
 import {SlBasket} from 'react-icons/sl'
 import Sidebar from '../Sidebar';
+import Cart from '../Cart';
 
 function Navbar() {
   const [active, setActive] = React.useState(false)
+  const [activeCart, setActiveCart] = React.useState(false)
   const [cartCount, setCartCount] = React.useState(0)
   
   React.useEffect(() => {
@@ -67,14 +69,19 @@ function Navbar() {
                 </li>
               ))
             }
-            <li className={c.basket}>
+            <li 
+              className={c.basket}
+              onClick={() => setActiveCart(!activeCart)}
+            >
               <SlBasket/>
               <span>{cartCount}</span>
               <IoIosArrowDown/>
             </li>
           </ul>
+          {activeCart ? <Cart setActiveCart={setActiveCart} /> : null}
         </div>
       </div>
+
       <Sidebar 
         active={active}
         setActive={setActive}

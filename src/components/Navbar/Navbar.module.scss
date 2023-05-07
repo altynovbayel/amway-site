@@ -1,5 +1,6 @@
 .navbar{
   width: 100%;
+  position: relative;
   .top_navbar{
     max-width: 1170px;
     margin: 0 auto;
@@ -54,10 +55,12 @@
   }
   .navlist{
     border-bottom: 2px solid #E7E7E7;
+    
     .container{
       max-width: 1170px;
       margin: 0 auto;
       padding: 0 10px;
+      position: relative;
       ul{
         display: flex;
         justify-content: end;
