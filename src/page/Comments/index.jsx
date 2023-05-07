@@ -3,9 +3,11 @@ import c from './Comments.module.scss'
 import Title from "../../components/Title";
 import ReviewCard from "../../components/ReviewCard";
 import CommentsForm from '../../components/CommentsForm';
+import { GetComments } from '../../helpers';
 
 function Comments(props) {
   const [ active, setActive ] = React.useState(false)
+  const { comments } = GetComments() 
 
   return (
     <div className={c.comments}>
@@ -16,10 +18,18 @@ function Comments(props) {
         </div>
         {active ? <CommentsForm active={active} setActive={setActive}/> : null}
         <div className={c.comments_cards}>
-          <ReviewCard/>
-          <ReviewCard/>
-          <ReviewCard/>
-          
+          {
+            comments?.length === 0 ?
+            <h1>Ничего нет</h1>
+            :
+            comments?.map(item => (
+              <ReviewCard 
+                username={item.username}
+                comment={item.comment}
+                date={item.date}
+              />
+            ))
+          }
         </div>
       </div>
     </div>

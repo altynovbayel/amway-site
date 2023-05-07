@@ -150,11 +150,15 @@
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
+    transition: .3s;
     @media (max-width: 768px) {
       margin-left: 70px;
     }
     @media (max-width: 425px) {
       margin-left: 0;
+    }
+    &:hover{
+      opacity: 0.5;
     }
   }
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import c from './Review.module.scss'
 
-function ReviewCard() {
+function ReviewCard({username, comment, date}) {
   return (
     <div className={c.review}>
       <div className={c.profile_photo}>
@@ -9,12 +9,12 @@ function ReviewCard() {
       </div>
       <div>
         <div className={c.review_info}>
-          <p className={c.name}>АЛЕКСАНДР</p>
-          <span className={c.date}>13 АПРЕЛЯ 2023, 11:26</span>
+          <p className={c.name}>{username}</p>
+          <span className={c.date}>{date}</span>
         </div>
         <div className={c.review_text}>
           <p>
-            Молодцы. Супер. Очень оперативно и дешевле, чем через Казахстанский официальный сайт.
+            {comment}
           </p>
         </div>
       </div>

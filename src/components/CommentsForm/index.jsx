@@ -2,6 +2,7 @@ import React from 'react'
 import c from './CommentsForm.module.scss'
 import { AiOutlineClose, AiOutlineReload } from 'react-icons/ai';
 import { useForm } from 'react-hook-form';
+import { api } from '../../config/api';
 
 const CommentsForm = ({active, setActive}) => {
   const [captchaText, setCaptchaText] = React.useState(generateCaptchaText());  
@@ -33,6 +34,8 @@ const CommentsForm = ({active, setActive}) => {
     if(event.username.length !== 0 && event.comment.length !== 0 && event.captcha.length !== 0){
       if (event.captcha === captchaText) {
         alert("Captcha passed!");
+        api.postComment(event)
+          .then(() => window.location.reload())
         setUsernameField(false)
         setCommentField(false)
         setCaptchaField(false)
