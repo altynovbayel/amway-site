@@ -5,7 +5,7 @@ function ReviewCard() {
   return (
     <div className={c.review}>
       <div className={c.profile_photo}>
-        <img src="/images/user-photo.png" alt="" />
+        <img src="https://www.pinclipart.com/picdir/big/165-1653686_female-user-icon-png-download-user-colorful-icon.png" alt="" />
       </div>
       <div>
         <div className={c.review_info}>
