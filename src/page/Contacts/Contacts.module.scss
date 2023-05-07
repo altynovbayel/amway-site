@@ -1,12 +1,16 @@
 .contacts{
+  width: 100%x;
   margin-bottom: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   .container{
-    max-width: 1170px;
-    margin: 150px auto 0;
+    margin: 150px 0;
     display: flex;
-    padding: 0 10px;
+    justify-content: center;
+    gap: 100px;
     .phone, .whatsapp{
-      width: 50%;
       display: flex;
       gap: 30px;
       @media (max-width: 425px) {
@@ -19,6 +23,9 @@
         svg{
           color: #555555;
         }
+        .whats{
+          color: green;
+        }
         p{
           font-size: 14px;
           font-weight: bold;
@@ -28,6 +35,7 @@
         p{
           font-size: 16px;
           color: #555;
+          margin-bottom: 10px;
         }
       }
     }

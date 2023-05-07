@@ -3,6 +3,7 @@ import c from './Contacts.module.scss'
 import Title from "../../components/Title";
 import {FaPhoneAlt} from "react-icons/fa";
 import {ImWhatsapp} from "react-icons/im";
+import { Link } from 'react-router-dom';
 
 function Contacts() {
   return (
@@ -17,19 +18,31 @@ function Contacts() {
             </p>
           </div>
           <div className={c.numbers}>
-            <p>8 (985) 501-84-80</p>
-            <p>8 (985) 501-84-80</p>
+            <p>
+              <Link to="tel:8 (985) 501-84-80">
+                8 (985) 501-84-80
+              </Link>
+            </p>
+            <p>
+              <Link to="tel:8 (985) 501-84-80">
+                8 (985) 501-84-80
+              </Link>
+            </p>
           </div>
         </div>
         <div className={c.whatsapp}>
           <div className={c.title}>
-            <ImWhatsapp/>
+            <ImWhatsapp className={c.whats} />
             <p>
               WHATSAPP
             </p>
           </div>
           <div className={c.numbers}>
-            <p>8 (985) 501-84-80</p>
+            <p>
+              <Link to={"https://wa.me/89855018480"}>
+                8 (985) 501-84-80
+              </Link>
+            </p>
           </div>
         </div>
       </div>

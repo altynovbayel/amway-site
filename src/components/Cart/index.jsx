@@ -27,6 +27,13 @@ const Cart = ({setActiveCart}) => {
           />
         ))
       }
+      {
+        cart?.length !== 0 ? 
+        <div className={c.totalPrice}>
+          <h2>Всего: {cart?.reduce((acc, obj) => acc + obj.count * obj.price, 0)} ₽</h2>
+        </div> :
+        null
+      }
       <div className={c.btns}>
         <button 
           onClick={() => setActiveCart(false)}
