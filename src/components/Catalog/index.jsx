@@ -8,7 +8,7 @@ function Catalog() {
   
   return (
     <div className={c.catalog}>
-      <Title title={'последние товары'}/>
+      <Title title={'категории товаров'}/>
       <div className={c.container}>
         <div className={c.row_cards}>
           {
