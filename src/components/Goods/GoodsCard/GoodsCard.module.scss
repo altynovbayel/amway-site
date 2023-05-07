@@ -1,6 +1,12 @@
 .card{
   width: 250px;
   height: 400px;
+  @media (max-width: 768px) {
+    width: 240px;
+  }
+  @media (max-width: 425px) {
+    width: 250px;
+  }
   .image{
     position: relative;
     display: flex;
