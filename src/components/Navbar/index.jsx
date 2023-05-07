@@ -13,11 +13,19 @@ function Navbar() {
   const [active, setActive] = React.useState(false)
   const [activeCart, setActiveCart] = React.useState(false)
   const [cartCount, setCartCount] = React.useState(0)
-  
-  React.useEffect(() => {
+  const [dep, setDep] = React.useState('0')
+
+  const getCart = () => {
     const cart = JSON.parse(localStorage.getItem('cart'))
     cart && setCartCount(cart.length)
-  }, [])
+  }
+  
+  React.useEffect(() => {
+    getCart()
+    setTimeout(() => {
+      setDep(Math.random())
+    }, 2000)
+  }, [dep])
   
   return (
     <div className={c.navbar}>
