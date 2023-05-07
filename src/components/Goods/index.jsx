@@ -12,7 +12,7 @@ import DoubleSlider from "../DoubleSlider";
 const Goods = () => {
   const { products } = GetProducts()
   const [ result, setResult ] = React.useState([])
-  const [values, setValues] = React.useState([6800, 9500]);
+  const [values, setValues] = React.useState([0, 9500]);
   // const [priceFiltered, setPriceFiltered] = React.useState([])
   
   const priceFilter = () => {
