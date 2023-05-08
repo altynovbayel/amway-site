@@ -2,7 +2,7 @@ import React from 'react';
 import ReactSlider from 'react-slider';
 import './DoubleSlider.scss'
 
-function DoubleSlider({values, setValues, show, max }) {
+function DoubleSlider({values, setValues, show }) {
   const handleChange = (newValues) => setValues(newValues);
   return (
     <div className='slider'>
@@ -14,7 +14,7 @@ function DoubleSlider({values, setValues, show, max }) {
         defaultValue={[0, values[1]]}
         value={[values[0], values[1]]}
         min={0}
-        max={max}
+        max={50000}
         ariaLabel={['Lower thumb', 'Upper thumb']}
         pearling
         minDistance={10}

@@ -6,5 +6,6 @@ export const api = {
   getCategories: () => axios.get('/categories/'),
   postComment: (data) => axios.post('/reviews/', data),
   getComments: () => axios.get('/reviews/'),
-  getSingleCategory: (id) => axios.get(`/categories/${id}/`)
+  getSingleCategory: (id) => axios.get(`/categories/${id}/`),
+  postConsultation: (data) => axios.post('/main/consultation/', data)
 }

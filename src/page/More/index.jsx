@@ -19,7 +19,7 @@ const More = () => {
   }, []) 
 
   const postToCart = () => {
-    check === null || check === undefined || !check ? cart.push({...product, count: 1}) : cart[index].count = cart[index].count + 1;
+    check ? cart.push({...product, count: 1}) : cart[index].count = cart[index].count + 1;
     localStorage.setItem('cart', JSON.stringify(cart))
   }
 
@@ -39,7 +39,7 @@ const More = () => {
           <h2>{product?.title}</h2>
           <h1>{product?.price} руб</h1>
           <button onClick={() => postToCart()}>
-            <SlBasket /> В корзину
+            <SlBasket /> {check ? 'В корзине' : 'В корзину'}
           </button>
           <p className={c.desc}>Описание:</p>
           <p>
