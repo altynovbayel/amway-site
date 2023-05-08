@@ -31,7 +31,7 @@ const CommentsForm = ({active, setActive}) => {
   }
 
   function handleSubmitData(event) {
-    if(event.username.length !== 0 && event.comment.length !== 0 && event.captcha.length !== 0){
+    if(event.name.length !== 0 && event.comment.length !== 0 && event.captcha.length !== 0){
       if (event.captcha === captchaText) {
         alert("Отзыв отправлен");
         api.postComment(event)
@@ -62,14 +62,14 @@ const CommentsForm = ({active, setActive}) => {
           placeholder='Представьтесь'
           className={usernameField ? c.active : ''}
           autoComplete="off"
-          {...register('username',
+          {...register('name',
             {
               required: true,
               minLength: 1
             }
           )}
         />
-        {errors.username && <p className={c.error}>Заполните поле</p>}
+        {errors.name && <p className={c.error}>Заполните поле</p>}
       </div>
       <div>
         <textarea 
