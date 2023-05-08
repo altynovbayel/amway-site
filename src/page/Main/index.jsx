@@ -5,7 +5,6 @@ import Contacts from "../Contacts";
 import Form from '../../components/Form';
 import Brands from "../../components/Brands";
 
-
 function Main() {
   return (
     <div className={c.main}>

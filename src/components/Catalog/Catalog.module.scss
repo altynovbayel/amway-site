@@ -12,6 +12,11 @@
       @media (max-width: 425px) {
         justify-content: center;
       }
+      .nothing{
+        display: flex;
+        justify-content: center;
+        z-index: 10;
+      }
     }
   }
 }

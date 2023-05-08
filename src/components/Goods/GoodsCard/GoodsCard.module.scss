@@ -81,6 +81,12 @@
       transition: .3s;
       position: absolute;
       bottom: 0;
+      &.added{
+        opacity: 0.5;
+        &:hover{
+          opacity: 0.5
+        }
+      }
       &:hover{
         opacity: 0.7;
       }

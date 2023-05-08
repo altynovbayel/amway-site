@@ -15,6 +15,7 @@ function Category() {
   const [ result, setResult ] = React.useState([])
   const [values, setValues] = React.useState([0, 9500]);
   
+  
   React.useEffect(() => {
     api.getSingleCategory(id).then(r => r?.data && setData(r.data))
   }, [])
@@ -87,7 +88,7 @@ function Category() {
                     result?.map(item => (
                       <GoodsCard
                         key={item.id}
-                        image={`https://amway.pythonanywhere.com//${item.image}`}
+                        image={`https://amway.pythonanywhere.com/${item.image}`}
                         title={item.title}
                         price={item.price}
                         id={item.id}
