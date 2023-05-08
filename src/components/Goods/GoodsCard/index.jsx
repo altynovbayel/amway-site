@@ -46,7 +46,7 @@ const GoodsCard = ({image, title, price, id, obj}) => {
         onClick={() => Navigate(`/products/${id}/`)} 
       >
         <img 
-          src={obj.image}
+          src={image}
           alt=""
         />
         <p>

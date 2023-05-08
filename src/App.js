@@ -18,6 +18,7 @@ function App() {
         <Route path='/contacts/' element={<Layout.Contacts/>}/>
         <Route path='/comments/' element={<Layout.Comments/>}/>
         <Route path='/products/:id' element={<Layout.More/>}/>
+        <Route path='/products/category/:id' element={<Layout.Category/>}/>
         <Route path='/cart/' element={<Layout.Order/>}/>
       </Switch>
       <Footer />

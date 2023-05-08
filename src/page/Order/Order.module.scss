@@ -52,12 +52,13 @@
             gap: 50px;
           }
         }
-        @media (max-width: 425px){
+        @media (max-width: 700px){
           display: none;
         }
       }
       .products{
         margin-top: 50px;
+        padding: 0 10px;
       }
       .total_price{
         background-color: #EAEAEA;
