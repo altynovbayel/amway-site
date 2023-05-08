@@ -3,7 +3,11 @@
   margin: 100px auto;
   padding: 0 10px;
   .my_swiper{
-
+    img{
+      width: 165px;
+      height: 80px;
+      object-fit: contain;
+    }
   }
   :global(.swiper-button-next:after) {
     color: #002F5F;

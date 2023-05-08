@@ -12,11 +12,22 @@ function Brands() {
   return (
     <div className={c.brands}>
       <Swiper
-        slidesPerView={6}
+        slidesPerView={2}
         spaceBetween={10}
         navigation={true}
         modules={[Navigation]}
         className={c.my_swiper}
+        breakpoints={{
+          425:{
+            slidesPerView: 2
+          },
+          768:{
+            slidesPerView: 4
+          },
+          1024:{
+            slidesPerView: 6
+          }
+        }}
       >
         {
           brandsList.map((el, id) => (

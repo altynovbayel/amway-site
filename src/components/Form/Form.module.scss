@@ -37,6 +37,9 @@
         border: 2px solid #BDBDBD;
         font-size: .9375rem;
         outline: none;
+        @media (max-width: 768px) {
+          width: 400px;
+        }
         @media (max-width: 425px) {
           width: 350px;
         }
