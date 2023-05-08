@@ -2,9 +2,8 @@ import React from 'react';
 import ReactSlider from 'react-slider';
 import './DoubleSlider.scss'
 
-function DoubleSlider({values, setValues, show }) {
+function DoubleSlider({values, setValues, show, max }) {
   const handleChange = (newValues) => setValues(newValues);
-  
   return (
     <div className='slider'>
       <h3>ЦЕНА</h3>
@@ -12,10 +11,10 @@ function DoubleSlider({values, setValues, show }) {
         className="horizontal-slider"
         thumbClassName="example-thumb"
         trackClassName="example-track"
-        defaultValue={[0, 9500]}
+        defaultValue={[0, values[1]]}
         value={[values[0], values[1]]}
         min={0}
-        max={9500}
+        max={max}
         ariaLabel={['Lower thumb', 'Upper thumb']}
         pearling
         minDistance={10}

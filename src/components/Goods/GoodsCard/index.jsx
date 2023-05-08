@@ -10,7 +10,7 @@ const GoodsCard = ({image, title, price, id, obj}) => {
 
   const cart = JSON.parse(localStorage.getItem('cart'))
   const check = cart?.find(item => item?.id === obj?.id)
-  const index = cart.findIndex(obj => obj.id === id);
+  const index = cart?.findIndex(obj => obj.id === id);
 
   React.useEffect(() => {
     setTimeout(() => {
@@ -21,19 +21,28 @@ const GoodsCard = ({image, title, price, id, obj}) => {
   }, [dep])
 
   const postToCart = () => {
-    !check ? cart.push({...obj, count: 1}) : cart[index].count = cart[index].count + 1;
+    !check ? cart?.push({...obj, count: 1}) : cart[index].count = cart[index].count + 1;
     localStorage.setItem('cart', JSON.stringify(cart))
   }
 
   const increment = () => {
-    !check ? cart.push({...obj, count: 1}) : cart[index].count = cart[index].count + 1;
+    !check ? cart?.push({...obj, count: 1}) : cart[index].count = cart[index].count + 1;
     localStorage.setItem('cart', JSON.stringify(cart))
+  }  
+  
+  const deleteItem = () => {
+    const index = cart?.findIndex(item => item.id === obj.id);
+    if (index !== -1) {
+      cart?.splice(index, 1);
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
   }
   
   const decrement = () => {
-    if(cart[index].count !== 1){
-      !check ? cart.push({...obj, count: 1}) : cart[index].count = cart[index].count - 1;
-      localStorage.setItem('cart', JSON.stringify(cart))
+    !check ? cart?.push({...obj, count: 1}) : cart[index].count = cart[index].count - 1;
+    localStorage.setItem('cart', JSON.stringify(cart))
+    if(cart[index].count === 0){
+      deleteItem()
     }
   }
 
@@ -79,11 +88,17 @@ const GoodsCard = ({image, title, price, id, obj}) => {
           :
           null
         }
-        <button
-          onClick={() => postToCart()}
-        >
-          <SlBasket /> <span>Добавить в корзину </span>
-        </button>
+        {
+          !check ? 
+          <button
+            onClick={() => postToCart()}
+          >
+            <SlBasket /> <span>Добавить в корзину </span>
+          </button> :
+          <button className={c.added}>
+            <SlBasket /> <span>Добавлено в корзину </span>
+          </button>
+        }
       </div>
     </div>
   )

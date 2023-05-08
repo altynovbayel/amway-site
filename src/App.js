@@ -2,7 +2,6 @@ import Navbar from "./components/Navbar";
 import { Route, Routes as Switch } from 'react-router-dom';
 import * as Layout from './page'
 import axios from "axios";
-import { api } from "./config/api";
 import React from "react";
 import Footer from "./components/Footer";
 axios.defaults.baseURL = 'https://amway.pythonanywhere.com'

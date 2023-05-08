@@ -4,9 +4,8 @@ import {AiOutlineMinus, AiOutlinePlus} from "react-icons/ai";
 import {FiTrash} from "react-icons/fi";
 
 function OrderCard({image, count, title, price, id}) {
-  
   const cart = JSON.parse(localStorage.getItem('cart'))
-  
+
   const changeCount = (count) => {
     const index = cart.findIndex(obj => obj.id === id);
     if (index !== -1) {

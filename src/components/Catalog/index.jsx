@@ -13,7 +13,6 @@ function Catalog() {
       .then(r => setCategories(r.data))
   }, [])
   
-  console.log(categories)
   if (!categories) return <div className={c.loader}> <Loader/></div>
   return (
     <div className={c.catalog}>
@@ -21,9 +20,15 @@ function Catalog() {
       <div className={c.container}>
         <div className={c.row_cards}>
           {
+            categories ?
             categories?.map(item => (
               <CatalogCard key={item.id} title={item.title} img={item.image} id={item.id}/>
-            ))
+            )) :
+            <div className={c.nothing}>
+              <h2>
+                Ничего нет!
+              </h2>
+            </div>
           }
         </div>
       </div>

@@ -31,6 +31,9 @@
           width: 260px;
           height: 260px;
         }
+        @media (max-width: 425px) {
+          margin-bottom: 20px;
+        }
       }
     }
     .right{
