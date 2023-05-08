@@ -5,9 +5,17 @@
   font-family: "Rubik", sans-serif;
 }
 
-body {
+
+#root{
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+html,body {
   margin: 0;
   padding-top: 80px;
+  height: 100%;
 }
 
 a{
