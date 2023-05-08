@@ -2,11 +2,13 @@ import React from 'react';
 import c from './Order.module.scss'
 import Title from "../../components/Title";
 import OrderCard from "./OrderCard";
+import OrderForm from "../../components/OrderForm";
 
 
 function Order() {
   const [data, setData] = React.useState(null)
   const [ dep, setDep ] = React.useState(null)
+  const [show, setShow] = React.useState(false)
   
   React.useEffect(() => {
     setTimeout(() => {
@@ -31,7 +33,7 @@ function Order() {
   
         {
           data?.length > 0 ?
-            <div className={c.cart_list}>
+            <div className={c.cart_list} style={show ? {display:"none"} : {display: "block"}}>
               <div className={c.category}>
                 <p>
                   ТОВАР
@@ -56,13 +58,16 @@ function Order() {
               </div>
               
               <div className={c.next}>
-                <button>
+                <button onClick={() => setShow(true)}>
                   продолжить
                 </button>
               </div>
             </div> :
             <span className={c.empty_msg}>КОРЗИНА ПУСТА</span>
         }
+      </div>
+      <div style={show ? {display:"block"} : {display: "none"}}>
+        <OrderForm setShow={setShow}/>
       </div>
     </div>
   );

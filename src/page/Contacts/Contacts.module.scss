@@ -10,6 +10,12 @@
     display: flex;
     justify-content: center;
     gap: 100px;
+    @media (max-width: 425px) {
+      gap: 80px;
+    }
+    @media (max-width: 375px) {
+      gap: 30px;
+    }
     .phone, .whatsapp{
       display: flex;
       gap: 30px;

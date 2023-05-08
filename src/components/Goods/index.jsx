@@ -16,7 +16,7 @@ const Goods = () => {
   const [ searchResult, setSearchResult ] = React.useState(null)
   const [ search, setSearch ] = React.useState('')
   const [ categories, setCategories ] = React.useState(null)
-  const [ values, setValues ] = React.useState([0, 9500]);
+  const [ values, setValues ] = React.useState([0, 50000]);
   
   const priceFilter = () => {
     const res = products?.filter(el => el.price >= values[0] && el.price <= values[1])
@@ -43,10 +43,7 @@ const Goods = () => {
     !cart && localStorage.setItem('cart', JSON.stringify([]))
 
     api.getCategories()
-      .then(res => {
-        setCategories(res.data)
-        setValues([0, 50000])
-      })
+      .then(res => setCategories(res.data))
   }, [])
 
   return (
@@ -73,7 +70,7 @@ const Goods = () => {
                     searchResult?.length !== 0 ?
                     searchResult?.map(item => (
                       <li key={item.id}>
-                        <Link to={`/products/${item.id}`}>
+                        <Link to={`/products/${item.id}/`}>
                           {item.title}
                         </Link>
                       </li>
@@ -96,6 +93,7 @@ const Goods = () => {
           </form>
          <span className={c.price_layout}>
             <DoubleSlider setValues={setValues} values={values} show={priceFilter}/>
+        
          </span>
           <div className={c.container}>
             <div className={c.row_cards}>
@@ -134,7 +132,7 @@ const Goods = () => {
           </div>
         </div>
         <span className={c.price_layout_2}>
-          <DoubleSlider setValues={setValues} values={values} show={priceFilter} />
+          <DoubleSlider setValues={setValues} values={values} show={priceFilter} products={products && products} />
           <ul className={c.categories_layout}>
             <h4>Категории:</h4>
             {

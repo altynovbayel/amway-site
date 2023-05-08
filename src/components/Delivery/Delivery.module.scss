@@ -1,0 +1,14 @@
+.delivery{
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 0 10px;
+  .delivery_text{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-top: 20px;
+    p{
+      color: #555555;
+    }
+  }
+}

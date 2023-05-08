@@ -14,6 +14,20 @@ export const GetProducts = () => {
   }
 }
 
+export const GetProduct = (id) => {
+  const [ product, setProduct ] = React.useState(null)
+  
+  React.useEffect(() => {
+    api.getProduct(id)
+      .then(res => setProduct(res.data))
+  }, [])
+  
+  return {
+    product
+  }
+}
+
+
 
 export const GetComments = () => {
   const [ comments, setComments ] = React.useState(null)

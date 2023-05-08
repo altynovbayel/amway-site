@@ -5,12 +5,14 @@ import { Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import {brandsList} from "../../utils/list";
+import Title from "../Title";
 
 function Brands() {
  
   
   return (
     <div className={c.brands}>
+      <Title title={'Наши бренды'}/>
       <Swiper
         slidesPerView={2}
         spaceBetween={10}

@@ -4,6 +4,7 @@ import './DoubleSlider.scss'
 
 function DoubleSlider({values, setValues, show }) {
   const handleChange = (newValues) => setValues(newValues);
+  
   return (
     <div className='slider'>
       <h3>ЦЕНА</h3>

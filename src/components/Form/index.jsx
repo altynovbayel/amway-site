@@ -4,7 +4,6 @@ import { useForm } from 'react-hook-form'
 import { api } from '../../config/api'
 
 const Form = () => {
-  const [ popActive, setPopActive ] = React.useState(false)
   const [ nameError, setNameError ] = React.useState(false)
   const [ phoneError, setPhoneError ] = React.useState(false)
   const [ gmailError, setGmailError ] = React.useState(false)
