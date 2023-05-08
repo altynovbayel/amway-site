@@ -38,6 +38,9 @@
   .price{
     color: #555;
     font-size: 14px;
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
   .count{
     display: flex;
