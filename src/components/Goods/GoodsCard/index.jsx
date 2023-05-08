@@ -2,6 +2,7 @@ import React from 'react'
 import c from './GoodsCard.module.scss'
 import {SlBasket} from 'react-icons/sl'
 import { BiMinus, BiPlus } from 'react-icons/bi'
+import { useNavigate } from 'react-router-dom'
 
 const GoodsCard = ({image, title, price, id, obj}) => {
   const [ active, setActive ] = React.useState(false)
@@ -36,9 +37,14 @@ const GoodsCard = ({image, title, price, id, obj}) => {
     }
   }
 
+  const Navigate = useNavigate()
+
   return (
     <div className={c.card}>
-      <div className={c.up}>
+      <div
+        className={c.up}
+        onClick={() => Navigate(`/products/${id}/`)} 
+      >
         <img 
           src={obj.image}
           alt=""

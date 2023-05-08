@@ -20,8 +20,7 @@ export const GetComments = () => {
   
   React.useEffect(() => {
     api.getComments()
-      .then(res => res.json())
-      .then(res => setComments(res))
+      .then(res => setComments(res.data))
   }, [])
 
   return {

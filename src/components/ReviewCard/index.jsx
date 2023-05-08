@@ -1,16 +1,17 @@
 import React from 'react';
 import c from './Review.module.scss'
+import { AiOutlineUser } from 'react-icons/ai';
 
-function ReviewCard({username, comment, date}) {
+function ReviewCard({username, comment, date, time}) {
   return (
     <div className={c.review}>
       <div className={c.profile_photo}>
-        <img src="https://www.pinclipart.com/picdir/big/165-1653686_female-user-icon-png-download-user-colorful-icon.png" alt="" />
+        <AiOutlineUser />        
       </div>
       <div>
         <div className={c.review_info}>
           <p className={c.name}>{username}</p>
-          <span className={c.date}>{date}</span>
+          <span className={c.date}>{date}, {time}</span>
         </div>
         <div className={c.review_text}>
           <p>
