@@ -43,9 +43,10 @@ const Goods = () => {
     !cart && localStorage.setItem('cart', JSON.stringify([]))
 
     api.getCategories()
-      .then(res => setCategories(res.data))
-    let max = 9500
-    setValues([0, max])
+      .then(res => {
+        setCategories(res.data)
+        setValues([0, 50000])
+      })
   }, [])
 
   return (
@@ -94,8 +95,7 @@ const Goods = () => {
             </button>
           </form>
          <span className={c.price_layout}>
-            <DoubleSlider setValues={setValues} values={values} show={priceFilter} max={values[2]}/>
-        
+            <DoubleSlider setValues={setValues} values={values} show={priceFilter}/>
          </span>
           <div className={c.container}>
             <div className={c.row_cards}>
@@ -134,7 +134,7 @@ const Goods = () => {
           </div>
         </div>
         <span className={c.price_layout_2}>
-          <DoubleSlider setValues={setValues} values={values} show={priceFilter} products={products && products} />
+          <DoubleSlider setValues={setValues} values={values} show={priceFilter} />
           <ul className={c.categories_layout}>
             <h4>Категории:</h4>
             {
