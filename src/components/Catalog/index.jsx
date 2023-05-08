@@ -1,7 +1,6 @@
 import React from 'react';
 import Title from "../Title";
 import c from './Catalog.module.scss'
-import {catalogList} from "../../utils/list";
 import CatalogCard from "./CatalogCard";
 import {api} from "../../config/api";
 import Loader from "../Loader";

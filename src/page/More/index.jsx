@@ -2,7 +2,6 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import c from './More.module.scss'
 import Title from '../../components/Title'
-import { api } from '../../config/api'
 import { SlBasket } from 'react-icons/sl'
 import {BiMinus, BiPlus} from "react-icons/bi";
 import {GetProduct} from "../../helpers";

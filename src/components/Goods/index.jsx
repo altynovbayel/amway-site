@@ -3,7 +3,6 @@ import Title from '../Title'
 import c from './Goods.module.scss'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { GetProducts } from '../../helpers'
-import { useForm } from 'react-hook-form'
 import GoodsCard from './GoodsCard'
 import DoubleSlider from "../DoubleSlider";
 import Loader from "../Loader";
@@ -22,12 +21,6 @@ const Goods = () => {
     const res = products?.filter(el => el.price >= values[0] && el.price <= values[1])
     res && setResult(res)
   }
-
-  const {
-    register ,
-    handleSubmit
-  } = useForm()
-
   const searching = () => {
     const res = products?.filter(item => item.title.toLowerCase().includes(search.toLowerCase())) 
     setResult(res);

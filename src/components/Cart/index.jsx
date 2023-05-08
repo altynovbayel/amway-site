@@ -35,7 +35,7 @@ const Cart = ({setActiveCart}) => {
         ))
       }
       {
-        !cart || cart?.length !== 0 ? 
+        cart && cart?.length !== 0 ? 
         <div className={c.totalPrice}>
           <h2>Всего: {cart?.reduce((acc, obj) => acc + obj.count * obj.price, 0)} ₽</h2>
         </div> :

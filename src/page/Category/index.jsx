@@ -7,7 +7,6 @@ import Title from "../../components/Title";
 import {AiOutlineSearch} from "react-icons/ai";
 import DoubleSlider from "../../components/DoubleSlider";
 import GoodsCard from "../../components/Goods/GoodsCard";
-import {useForm} from "react-hook-form";
 
 function Category() {
   const [data, setData] = React.useState(null)
@@ -30,12 +29,7 @@ function Category() {
     res && setResult(res)
   }
   
-  const {
-    register ,
-    handleSubmit
-  } = useForm()
-  
-  const searching = (search) => {
+  const searching = () => {
     const res = data?.product_data.filter(item => item.title.toLowerCase().includes(search.search.toLowerCase()))
     setResult(res);
   }
@@ -58,7 +52,6 @@ function Category() {
         <div className={c.search_filter}>
           <form
             className={c.search}
-            onSubmit={handleSubmit(data => searching(data))}
           >
             <div className={c.search_form}>
               <input
@@ -87,7 +80,12 @@ function Category() {
                   null
               }
             </div>
-            <button type='submit'>
+            <button 
+              onClick={e => {
+                e.preventDefault()
+                searching()
+              }}
+            >
               <AiOutlineSearch />
               <span>Найти</span>
             </button>

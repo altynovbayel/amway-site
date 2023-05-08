@@ -7,7 +7,6 @@ function OrderForm({setShow}) {
   const {
     register,
     handleSubmit,
-    reset,
     formState: {errors, isValid},
   } = useForm({
     mode: "onChange"

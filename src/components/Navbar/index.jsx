@@ -1,7 +1,6 @@
 import React from 'react';
 import c from './Navbar.module.scss'
-import {FaBars, FaPhoneAlt} from "react-icons/fa";
-import {CgMail} from "react-icons/cg";
+import {FaBars} from "react-icons/fa";
 import {navlist} from "../../utils/list";
 import {Link, NavLink} from "react-router-dom";
 import {IoIosArrowDown} from "react-icons/io";
