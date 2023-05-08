@@ -27,9 +27,9 @@ const Cart = ({setActiveCart}) => {
         <div className={c.empty}>
           <h2>Корзина пустая.</h2>
         </div> :
-        cart?.map(item => (
+        cart?.map((item, i) => (
           <CartCard 
-            key={item.id}
+            key={i}
             item={item}
           />
         ))

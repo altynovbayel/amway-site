@@ -1,7 +1,6 @@
 import React from 'react'
 import c from './GoodsCard.module.scss'
 import {SlBasket} from 'react-icons/sl'
-import {Link} from 'react-router-dom'
 import { BiMinus, BiPlus } from 'react-icons/bi'
 
 const GoodsCard = ({image, title, price, id, obj}) => {
@@ -41,7 +40,7 @@ const GoodsCard = ({image, title, price, id, obj}) => {
     <div className={c.card}>
       <div className={c.up}>
         <img 
-          src="https://basket-06.wb.ru/vol1024/part102496/102496879/images/c246x328/3.jpg" 
+          src={obj.image}
           alt=""
         />
         <p>
