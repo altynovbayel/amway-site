@@ -8,7 +8,8 @@ import {api} from "../../config/api";
 function Catalog() {
   const [categories, setCategories] = React.useState(null)
   React.useEffect(() => {
-    api.getCategories().then(r => console.log(r.data))
+    api.getCategories()
+      .then(r => setCategories(r.data))
   }, [])
   return (
     <div className={c.catalog}>
@@ -16,8 +17,8 @@ function Catalog() {
       <div className={c.container}>
         <div className={c.row_cards}>
           {
-            catalogList.map(item => (
-              <CatalogCard key={item.id} title={item.title} img={item.img}/>
+            categories?.map(item => (
+              <CatalogCard key={item.id} title={item.title} img={item.image}/>
             ))
           }
         </div>

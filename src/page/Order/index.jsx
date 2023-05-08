@@ -54,6 +54,12 @@ function Order() {
                   {data?.reduce((acc, obj) => acc + obj.count * obj.price, 0)} руб.
                 </p>
               </div>
+              
+              <div className={c.next}>
+                <button>
+                  продолжить
+                </button>
+              </div>
             </div> :
             <span className={c.empty_msg}>КОРЗИНА ПУСТА</span>
         }
