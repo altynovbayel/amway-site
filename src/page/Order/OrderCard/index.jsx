@@ -3,7 +3,7 @@ import c from './OrderCard.module.scss'
 import {AiOutlineMinus, AiOutlinePlus} from "react-icons/ai";
 import {FiTrash} from "react-icons/fi";
 
-function OrderCard({count, title, price, id}) {
+function OrderCard({image, count, title, price, id}) {
   
   const cart = JSON.parse(localStorage.getItem('cart'))
   
@@ -29,7 +29,7 @@ function OrderCard({count, title, price, id}) {
     <div className={c.product_card}>
       <div className={c.product_title}>
         <img
-          src="https://i.siteapi.org/QbpiMfpeevPTWa8HXEtpCfrsiu0=/0x0:600x600/fit-in/70x/center/top/filters:fill(transparent):format(png)/5076e086ed264d4.s2.siteapi.org/img/ssbgj8kqqxww44ooc00c84kwkws80c"
+          src={image}
           alt=""/>
         <div className={c.product_name}>
           <p>{title}</p>

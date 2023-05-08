@@ -44,7 +44,7 @@ function Order() {
               <div className={c.products}>
                 {
                   data?.map(item => (
-                    <OrderCard {...item}/>
+                    <OrderCard key={item.id} {...item}/>
                   ))
                 }
               </div>
