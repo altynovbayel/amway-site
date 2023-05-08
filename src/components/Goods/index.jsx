@@ -34,7 +34,7 @@ const Goods = () => {
     !cart && localStorage.setItem('cart', JSON.stringify([]))
   }, [])
 
-  console.log(result);
+  console.log(products);
 
   return (
     <div className={c.catalog}>
@@ -68,7 +68,7 @@ const Goods = () => {
                 products?.map(item => (
                   <GoodsCard
                     key={item.id}
-                    image={item.img}
+                    image={item.image}
                     title={item.title}
                     price={item.price}
                     id={item.id}
@@ -83,7 +83,7 @@ const Goods = () => {
                 result?.map(item => (
                   <GoodsCard
                     key={item.id}
-                    image={item.img}
+                    image={item.image}
                     title={item.title}
                     price={item.price}
                     id={item.id}

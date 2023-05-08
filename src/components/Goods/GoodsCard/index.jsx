@@ -40,7 +40,7 @@ const GoodsCard = ({image, title, price, id, obj}) => {
     <div className={c.card}>
       <div className={c.up}>
         <img 
-          src={obj.image}
+          src={image}
           alt=""
         />
         <p>

@@ -4,6 +4,7 @@ export const api = {
   getProducts: () => axios.get('/products/'),
   getProduct: (id) => axios.get(`/products/${id}/`),
   getCategories: () => axios.get('/categories/'),
+  getSingleCategory: (id) => axios.get(`/categories/${id}`),
   postComment: (data) => fetch(`https://631afc8ddc236c0b1ee91ae6.mockapi.io/api/v1/comments/`, {
     method: 'POST',
     headers: {
