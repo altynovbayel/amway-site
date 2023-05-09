@@ -8,8 +8,6 @@ import {brandsList} from "../../utils/list";
 import Title from "../Title";
 
 function Brands() {
- 
-  
   return (
     <div className={c.brands}>
       <Title title={'Наши бренды'}/>
@@ -21,14 +19,14 @@ function Brands() {
         className={c.my_swiper}
         breakpoints={{
           425:{
-            slidesPerView: 2
+            slidesPerView:2
           },
-          768:{
-            slidesPerView: 4
+          768: {
+            slidesPerView: 4,
           },
-          1024:{
-            slidesPerView: 6
-          }
+          1024: {
+            slidesPerView: 6,
+          },
         }}
       >
         {
