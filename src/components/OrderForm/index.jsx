@@ -2,11 +2,15 @@ import React from 'react';
 import {useForm} from "react-hook-form";
 import c from './OrderForm.module.scss'
 import {api} from "../../config/api";
+import Alert from '../Alert';
 
 function OrderForm({setShow}) {
+  const [ alertActive, setAlertActive ] = React.useState(false)
+
   const {
     register,
     handleSubmit,
+    reset,
     formState: {errors, isValid},
   } = useForm({
     mode: "onChange"
@@ -14,15 +18,18 @@ function OrderForm({setShow}) {
   
   React.useEffect(() => {
     const cart = JSON.parse(localStorage.getItem('cart'))
-    console.log(`${cart[0].title} ${cart[0].count} * ${cart[0].price} = ${cart[0].price * cart[0].count }`)
+    console.log(`${cart[0]?.title} ${cart[0]?.count} * ${cart[0]?.price} = ${cart[0]?.price * cart[0]?.count }`)
     console.log(
       cart.map(item => `${item.title} - ${item.count}шт * ${item.price}руб = ${item.price * item.count }руб`)
     )
-    
   }, [])
   
   function send(data) {
-    api.postOrder({...data, product: 4 }).then()
+    api.postOrder({...data, product: 4 })
+      .then(() => {
+        setAlertActive(!alertActive)
+        reset()
+      })
   }
   
   return (
@@ -78,6 +85,20 @@ function OrderForm({setShow}) {
           </button>
         </div>
       </form>
+
+      {
+        alertActive ?
+        <Alert
+          item={{
+            title: 'Спасибо за заказ!',
+            comment: '',
+            icon: 'success'
+          }}
+          setActive={setAlertActive}
+        />
+        :
+        null
+      }
     </div>
   );
 }
