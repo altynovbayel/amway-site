@@ -1,4 +1,4 @@
-import { AiOutlineClose } from 'react-icons/ai'
+
 import c from './Alert.module.scss'
 
 const Alert = ({item, setActive}) => {

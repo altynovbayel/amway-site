@@ -2,11 +2,13 @@ import React from 'react'
 import c from './Form.module.scss'
 import { useForm } from 'react-hook-form'
 import { api } from '../../config/api'
+import Alert from "../Alert";
 
 const Form = () => {
   const [ nameError, setNameError ] = React.useState(false)
   const [ phoneError, setPhoneError ] = React.useState(false)
   const [ gmailError, setGmailError ] = React.useState(false)
+  const [ alertActive, setAlertActive ] = React.useState(false)
 
   const {
     register,
@@ -37,8 +39,7 @@ const Form = () => {
     }else{
       api.postConsultation(data)
         .then(() => {
-          alert('Заявка отправлена!')
-
+          setAlertActive(!alertActive)
           setNameError(false)
           setPhoneError(false)
           setGmailError(false)
@@ -80,6 +81,19 @@ const Form = () => {
           Отправить заявку
         </button>
       </form>
+      {
+        alertActive ?
+          <Alert
+            item={{
+              title: 'Спасибо за заказ!',
+              comment: '',
+              icon: 'success'
+            }}
+            setActive={setAlertActive}
+          />
+          :
+          null
+      }
     </div>
   )
 }

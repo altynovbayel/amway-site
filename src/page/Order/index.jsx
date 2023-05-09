@@ -7,7 +7,7 @@ import OrderForm from "../../components/OrderForm";
 
 function Order() {
   const [data, setData] = React.useState(null)
-  const [ dep, setDep ] = React.useState(null)
+  const [dep, setDep] = React.useState(null)
   const [show, setShow] = React.useState(false)
   
   React.useEffect(() => {
@@ -17,7 +17,7 @@ function Order() {
     }, 100)
   }, [dep])
   
-
+  
   return (
     <div className={c.cart}>
       <div className={c.title}>
@@ -30,16 +30,16 @@ function Order() {
           </h3>
           <span></span>
         </div>
-  
+        
         {
           data?.length > 0 ?
-            <div className={c.cart_list} style={show ? {display:"none"} : {display: "block"}}>
+            <div className={c.cart_list} style={show ? {display: "none"} : {display: "block"}}>
               <div className={c.category}>
                 <p>
                   ТОВАР
                 </p>
                 <div className={c.category_2}>
-                  <p>КОЛИЧЕСТВО	</p>
+                  <p>КОЛИЧЕСТВО </p>
                   <p>СТОИМОСТЬ</p>
                 </div>
               </div>
@@ -66,7 +66,7 @@ function Order() {
             <span className={c.empty_msg}>КОРЗИНА ПУСТА</span>
         }
       </div>
-      <div style={show ? {display:"block"} : {display: "none"}}>
+      <div style={show ? {display: "block"} : {display: "none"}}>
         <OrderForm setShow={setShow}/>
       </div>
     </div>
