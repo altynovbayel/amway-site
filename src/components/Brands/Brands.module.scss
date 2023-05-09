@@ -2,7 +2,23 @@
   max-width: 1170px;
   margin: 100px auto;
   padding: 0 10px;
+  @media (max-width: 1024px) {
+    width: 900px;
+  }
+  @media (max-width: 768px) {
+    width: 680px;
+  }
+  @media (max-width: 425px) {
+    width: 400px;
+  }
+  @media (max-width: 375px) {
+    width: 360px;
+  }
+  @media (max-width: 320px) {
+    width: 300px;
+  }
   .my_swiper{
+    gap: 50px;
     img{
       width: 165px;
       height: 80px;
