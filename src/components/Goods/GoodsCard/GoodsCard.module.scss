@@ -82,6 +82,7 @@
       position: absolute;
       bottom: 0;
       &.added{
+        background: green;
         opacity: 0.5;
         &:hover{
           opacity: 0.5

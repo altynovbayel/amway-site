@@ -25,6 +25,7 @@ function Comments(props) {
             comments?.reverse().map((item, id) => (
               <ReviewCard
                 key={id}
+                comments={comments}
                 username={item.name}
                 comment={item.comment}
                 date={item.created_at.slice(0, 10)}

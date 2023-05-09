@@ -60,6 +60,7 @@
         }
         li{
           padding: 20px 10px;
+          border-bottom: 1px solid #5c5c5c;
           &:hover{
             background: #EAEAEA;
           }
@@ -92,7 +93,7 @@
         border-left: 1px solid #5c5c5c;
         border-right: 1px solid #5c5c5c;
         li,
-        h3{
+        h4{
           padding: 20px 10px;
           position: relative;
           &::before{

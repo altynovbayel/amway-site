@@ -6,45 +6,43 @@
   border: 1px solid #ccc;
   padding: 20px;
   display: flex;
-  gap: 15px;
   align-items: start;
-  .profile_photo{
-    width: 2.5rem;
-    height: 2.5rem;
-    background: #0086ff;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-    color: white;
-  }
-  .review_info{
+  flex-direction: column;
+  gap: 15px;
+  .up{
     display: flex;
     align-items: center;
-    gap: 20px;
-    @media (max-width: 425px) {
-      flex-direction: column;
-      align-items: flex-start;
+    .profile_photo{
+      width: 2.5rem;
+      height: 2.5rem;
+      background: #0086ff;
+      border-radius: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      color: white;
+      margin-right: 10px;
     }
-    .name, .date{
-      font-size: 13px;
-    }
-    .date{
-      color: #555555;
-    }
-  }
-  .review_text{
-    margin-top: 20px;
-    p{
-      color: #555;
-      line-height: 25px;
-      font-weight: 400;
-      
-      @media (max-width: 425px) {
-        position: relative;
-        left: -60px;
+    .review_info{
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      .name, .date{
+        font-size: 13px;
+      }
+      .date{
+        color: #555555;
       }
     }
   }
+    .review_text{
+      margin-top: 20px;
+      p{
+        color: #555;
+        line-height: 25px;
+        font-weight: 400;
+      }
+    }
 }
