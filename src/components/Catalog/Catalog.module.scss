@@ -11,6 +11,7 @@
       flex-wrap: wrap;
       @media (max-width: 425px) {
         justify-content: center;
+        flex-direction: column;
       }
       .nothing{
         display: flex;

@@ -2,27 +2,28 @@
   max-width: 1170px;
   margin: 100px auto;
   padding: 0 10px;
-  @media (max-width: 1024px) {
-    width: 900px;
-  }
-  @media (max-width: 768px) {
-    width: 680px;
-  }
-  @media (max-width: 425px) {
-    width: 400px;
-  }
-  @media (max-width: 375px) {
-    width: 360px;
-  }
-  @media (max-width: 320px) {
-    width: 300px;
-  }
   .my_swiper{
-    gap: 50px;
+    width: 100%;
+    @media (max-width: 1024px) {
+      width: 900px;
+    }
+    @media (max-width: 768px) {
+      width: 650px;
+    }
+    @media (max-width: 425px) {
+      width: 350px;
+    }
+    @media (max-width: 320px) {
+      width: 300px;
+    }
     img{
       width: 165px;
       height: 80px;
       object-fit: contain;
+      @media (max-width: 420px) {
+        width: 145px;
+        height: 70px;
+      }
     }
   }
   :global(.swiper-button-next:after) {
