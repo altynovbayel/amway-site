@@ -14,14 +14,20 @@ function Category() {
   const [ result, setResult ] = React.useState([])
   const [values, setValues] = React.useState([0, 50000]);
   const [ categories, setCategories ] = React.useState(null)
+  const [ activeCategories, setActiveCategories ] = React.useState(false)
   const [ searchResult, setSearchResult ] = React.useState(null)
   const [ search, setSearch ] = React.useState('')
+  const [ selected, setSelected ] = React.useState('')
   
   
   React.useEffect(() => {
     api.getSingleCategory(id).then(r => r?.data && setData(r.data))
-    api.getCategories().then(res => setCategories(res.data))
-    
+    api.getCategories().then(res => {
+      setCategories(res.data)
+      const category = res.data.find(item => item.id === Number(id))
+      setSelected(category.title);
+    })
+
   }, [id])
   
   const priceFilter = () => {
@@ -30,7 +36,7 @@ function Category() {
   }
   
   const searching = () => {
-    const res = data?.product_data.filter(item => item.title.toLowerCase().includes(search.search.toLowerCase()))
+    const res = data?.product_data.filter(item => item.title.toLowerCase().includes(search.toLowerCase()))
     setResult(res);
   }
   
@@ -92,6 +98,33 @@ function Category() {
           </form>
           <span className={c.price_layout}>
            <DoubleSlider setValues={setValues} values={values} show={priceFilter}/>
+           <ul className={c.categories_phone}>
+              <h4>Категории: <span onClick={() => setActiveCategories(!activeCategories)}>{selected?.length > 20 ? `${selected?.slice(0, 20)}...` : selected}</span></h4>
+                {
+                  activeCategories ?
+                  <ul>
+                    <li>
+                      <Link to={`/catalog/`}>
+                        Все
+                      </Link>
+                    </li>
+                    {
+                      categories?.map(item => (
+                        <li key={item.id}>
+                          <Link 
+                            to={`/products/category/${item.id}/`}
+                            onClick={() => setActiveCategories(false)}
+                          >
+                            {item.title}
+                          </Link>
+                        </li>
+                      ))
+                    }
+                  </ul>
+                  :
+                    null
+                }
+            </ul>
          </span>
           <div className={c.container}>
             <div className={c.row_cards}>

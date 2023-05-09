@@ -15,7 +15,9 @@ const Goods = () => {
   const [ searchResult, setSearchResult ] = React.useState(null)
   const [ search, setSearch ] = React.useState('')
   const [ categories, setCategories ] = React.useState(null)
+  const [ selected, setSelected ] = React.useState('Все')
   const [ values, setValues ] = React.useState([0, 50000]);
+  const [ activeCategories, setActiveCategories ] = React.useState(false);
   
   const priceFilter = () => {
     const res = products?.filter(el => el.price >= values[0] && el.price <= values[1])
@@ -23,12 +25,12 @@ const Goods = () => {
   }
   const searching = () => {
     const res = products?.filter(item => item.title.toLowerCase().includes(search.toLowerCase())) 
-    setResult(res);
+    res && setResult(res);
   }
 
   const searchingOnType = (e) => {
     const res = products?.filter(item => item.title.toLowerCase().includes(e.toLowerCase())) 
-    setSearchResult(res);
+    res && setSearchResult(res);
   }
   
   React.useEffect(() => {
@@ -36,8 +38,11 @@ const Goods = () => {
     !cart && localStorage.setItem('cart', JSON.stringify([]))
 
     api.getCategories()
-      .then(res => setCategories(res.data))
+      .then(res => {
+        setCategories(res.data)
+      })
   }, [])
+
 
   return (
     <div className={c.catalog}>
@@ -62,8 +67,12 @@ const Goods = () => {
                   {
                     searchResult?.length !== 0 ?
                     searchResult?.map(item => (
-                      <li key={item.id}>
-                        <Link to={`/products/${item.id}/`}>
+                      <li 
+                        key={item.id}
+                      >
+                        <Link 
+                          to={`/products/${item.id}/`}
+                        >
                           {item.title}
                         </Link>
                       </li>
@@ -86,7 +95,30 @@ const Goods = () => {
           </form>
          <span className={c.price_layout}>
             <DoubleSlider setValues={setValues} values={values} show={priceFilter}/>
-        
+            <ul className={c.categories_phone}>
+              <h4>Категории: <span onClick={() => setActiveCategories(!activeCategories)}>{selected?.length > 20 ? `${selected?.slice(0, 20)}...` : selected}</span></h4>
+                {
+                  activeCategories ?
+                  <ul>
+                    <li>
+                      <Link to={`/catalog/`}>
+                        Все
+                      </Link>
+                    </li>
+                    {
+                      categories?.map(item => (
+                        <li key={item.id}>
+                          <Link to={`/products/category/${item.id}/`}>
+                            {item.title}
+                          </Link>
+                        </li>
+                      ))
+                    }
+                  </ul>
+                  :
+                    null
+                }
+            </ul>
          </span>
           <div className={c.container}>
             <div className={c.row_cards}>
@@ -130,7 +162,10 @@ const Goods = () => {
             <h4>Категории:</h4>
             {
               categories?.map(item => (
-                <li key={item.id}>
+                <li 
+                  key={item.id}
+                  onClick={() => setSelected(item.title)}
+                >
                   <Link to={`/products/category/${item.id}`}>
                     {item.title}
                   </Link>
