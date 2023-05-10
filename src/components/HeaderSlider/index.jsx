@@ -18,7 +18,7 @@ function HeaderSlider() {
         navigation={true}
         loop={true}
         modules={[Navigation]}
-        className="mySwiper"
+        className={c.my_swiper}
       >
         {
           headerSlideList.map(item => (

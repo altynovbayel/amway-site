@@ -2,13 +2,18 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  width: auto !important;
   height: 415px;
+  @media (max-width: 870px) {
+    height: 500px;
+  }
   @media (max-width: 768px) {
     flex-direction: column;
     padding: 20px 0 0;
     height: 720px;
+    gap: 10px;
   }
+
   @media (max-width: 425px) {
     height: 650px;
   }
