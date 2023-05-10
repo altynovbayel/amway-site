@@ -14,7 +14,7 @@ function HeaderSlide({img, text, title, backgroundColor, color}) {
         <h2>{title}</h2>
         <p>{text}</p>
         <button style={{backgroundColor: color}} onClick={toCatalog}>
-          Learn about our products
+          Узнайте о наших продуктах
         </button>
       </div>
       <div className={c.slider_img}>
