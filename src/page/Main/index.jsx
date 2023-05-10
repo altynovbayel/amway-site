@@ -5,10 +5,12 @@ import Contacts from "../Contacts";
 import Form from '../../components/Form';
 import Brands from "../../components/Brands";
 import Delivery from "../../components/Delivery";
+import HeaderSlider from "../../components/HeaderSlider";
 
 function Main() {
   return (
     <div className={c.main}>
+      <HeaderSlider/>
       <Catalog/>
       <Brands/>
       <Delivery/>

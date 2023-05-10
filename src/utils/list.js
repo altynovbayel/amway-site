@@ -101,3 +101,30 @@ export const catalogList = [
     img: 'https://www.amway.com/medias/hmp-00-category-NewProducts-m.png?context=bWFzdGVyfHJvb3R8ODkzNzN8aW1hZ2UvcG5nfGg5NC9oZWMvOTQxODQzODM0NDczNC5wbmd8N2QzNWZmNmY5MWM0MDIzZmQ2OTU3Yjg4N2U3ZjA1NGZmY2IzMmM1NDE4YjgwZmNjZDFlMTYyNzc2NWJlM2MzNQ ',
   },
 ]
+
+export const headerSlideList = [
+  {
+    id:1,
+    img: 'https://www.amwayglobal.com/wp-content/uploads/2020/06/Amway_Beauty-1024x455.jpg',
+    text: 'Мы считаем, что то, как вы выглядите, и то, как вы себя чувствуете, неразрывно связано. Вот почему мы берем лучшее из науки и природы, чтобы создавать косметические продукты, персонализированные специально для вас! Будь то сияющая здоровая кожа или обязательные цвета для макияжа, найдите идеальный вариант для своей неповторимой красоты.',
+    title: 'Хорошо выглядеть, чувствовать себя хорошо.',
+    backgroundColor: '#F6EEE8',
+    color: '#a0663a',
+  },
+  {
+    id:2,
+    img: 'https://www.amwayglobal.com/wp-content/uploads/2020/06/Amway_Home-1-1024x455.jpg',
+    text: 'Дышите глубоко. Часто увлажняйте. Это твой дом, твое пространство. И вы хотите, чтобы он был чистым без ущерба для безопасности. Очистители воздуха, фильтрация воды, приготовление пищи и уборка. Да, у нас есть для вас.',
+    title: 'Хороший вход. Хороший выход.',
+    backgroundColor: '#E5FDFE',
+    color: '#396E75',
+  },
+  {
+    id:3,
+    img: 'https://www.amwayglobal.com/wp-content/uploads/2020/06/Amway_Nutrition-1024x455.jpg',
+    text: 'У здорового образа жизни нет конечного состояния. Это путешествие в поисках того, что работает для вас. Как сделать более здоровый выбор. Как восполнить пробелы в питании. Знание того, откуда берутся ваши ингредиенты. И узнать, что лучше для вас.',
+    title: 'Здоровы вы, встречайте счастливых вас.',
+    backgroundColor: '#EFF9E5',
+    color: '#73793B',
+  },
+]
