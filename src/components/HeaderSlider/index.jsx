@@ -16,6 +16,7 @@ function HeaderSlider() {
       <Swiper
         slidesPerView={1}
         navigation={true}
+        loop={true}
         modules={[Navigation]}
         className="mySwiper"
       >
