@@ -30,5 +30,26 @@
     //@media (max-width: 360px) {
     //  width: 300px;
     //}
+
+    :global(.swiper-button-prev){
+      background-color: white;
+      color: black;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+    }
+    :global(.swiper-button-prev:after){
+      font-size: 15px;
+    }
+    :global(.swiper-button-next){
+      background-color: white;
+      color: black;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+    }
+    :global(.swiper-button-next:after){
+      font-size: 15px;
+    }
   }
 }
