@@ -3,7 +3,7 @@
   height: 460px;
   border-radius: 10px;
   border: 1px solid #e4e4e4;
-  padding: 15px;
+  padding: 0 15px;
   
   .up{
     width: 100%;
@@ -26,7 +26,7 @@
     }
     p{
       margin-top: 15px;
-      height: 55px;
+      min-height: 75px;
     }
   }
   .down{

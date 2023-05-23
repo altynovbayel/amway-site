@@ -41,3 +41,9 @@ export const GetComments = () => {
     comments
   }
 }
+
+export const ScrollToTop = () => {
+  return window.scrollTo({
+    top: 0
+  })
+}

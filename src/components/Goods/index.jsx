@@ -2,12 +2,13 @@ import React from 'react'
 import Title from '../Title'
 import c from './Goods.module.scss'
 import { AiOutlineSearch } from 'react-icons/ai'
-import { GetProducts } from '../../helpers'
+import {GetProducts, ScrollToTop} from '../../helpers'
 import GoodsCard from './GoodsCard'
 import DoubleSlider from "../DoubleSlider";
 import Loader from "../Loader";
 import { Link } from 'react-router-dom'
 import { api } from '../../config/api'
+import Pagination from "../Pagination";
 
 const Goods = () => {
   const { products } = GetProducts()
@@ -18,6 +19,14 @@ const Goods = () => {
   const [ selected, setSelected ] = React.useState('Все')
   const [ values, setValues ] = React.useState([0, 50000]);
   const [ activeCategories, setActiveCategories ] = React.useState(false);
+  // pagination
+  const [productsCopy, setProductsCopy] = React.useState([])
+  const [currentPage, setCurrentPage] = React.useState(1)
+  const limit = 20
+  const pageCount = Math.ceil(products?.length / limit)
+  const lastContentIndex = currentPage * limit;
+  const firstContentIndex = lastContentIndex - limit;
+  
   
   const priceFilter = () => {
     const res = products?.filter(el => el.price >= values[0] && el.price <= values[1])
@@ -26,6 +35,7 @@ const Goods = () => {
   const searching = () => {
     const res = products?.filter(item => item.title.toLowerCase().includes(search.toLowerCase())) 
     res && setResult(res);
+    setSearch('')
   }
 
   const searchingOnType = (e) => {
@@ -34,6 +44,7 @@ const Goods = () => {
   }
   
   React.useEffect(() => {
+    ScrollToTop()
     const cart = localStorage.getItem('cart')
     !cart && localStorage.setItem('cart', JSON.stringify([]))
 
@@ -42,8 +53,12 @@ const Goods = () => {
         setCategories(res.data)
       })
   }, [])
-
-
+  
+  React.useEffect(() => {
+    setProductsCopy(products?.slice(firstContentIndex, lastContentIndex))
+  }, [currentPage, products])
+  
+  
   return (
     <div className={c.catalog}>
       <Title title={'каталог товаров'}/>
@@ -127,7 +142,7 @@ const Goods = () => {
               }
               {
                 result?.length === 0  ?
-                products?.map(item => (
+                productsCopy?.map(item => (
                   <GoodsCard
                     key={item.id}
                     image={item.image}
@@ -175,6 +190,13 @@ const Goods = () => {
           </ul>
         </span>
       </div>
+      {
+        products &&
+        <div className={c.pagination}>
+          <Pagination pageCount={pageCount} current={currentPage} setCurrent={setCurrentPage}/>
+        </div>
+      }
+      
     </div>
   )
 }

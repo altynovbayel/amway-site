@@ -1,0 +1,15 @@
+.pg{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  button{
+    background-color: transparent;
+    &:disabled{
+      opacity: .7;
+    }
+    svg{
+      color: #0A467E;
+      font-size: 23px;
+    }
+  }
+}

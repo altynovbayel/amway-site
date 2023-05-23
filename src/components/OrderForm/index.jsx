@@ -3,6 +3,7 @@ import {useForm} from "react-hook-form";
 import c from './OrderForm.module.scss'
 import {api} from "../../config/api";
 import Alert from '../Alert';
+import {ScrollToTop} from "../../helpers";
 
 function OrderForm({setShow}) {
   const [ alertActive, setAlertActive ] = React.useState(false)
@@ -17,6 +18,7 @@ function OrderForm({setShow}) {
   })
   
   React.useEffect(() => {
+    ScrollToTop()
     const cart = JSON.parse(localStorage.getItem('cart'))
     console.log(`${cart[0]?.title} ${cart[0]?.count} * ${cart[0]?.price} = ${cart[0]?.price * cart[0]?.count }`)
     console.log(

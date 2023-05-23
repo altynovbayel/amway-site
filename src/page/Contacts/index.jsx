@@ -4,8 +4,12 @@ import Title from "../../components/Title";
 import {FaPhoneAlt} from "react-icons/fa";
 import {ImWhatsapp} from "react-icons/im";
 import { Link } from 'react-router-dom';
+import {ScrollToTop} from "../../helpers";
 
 function Contacts() {
+  React.useEffect(() => {
+    ScrollToTop()
+  }, [])
   return (
     <div className={c.contacts}>
       <Title title={'КОНТАКТНАЯ ИНФОРМАЦИЯ'}/>

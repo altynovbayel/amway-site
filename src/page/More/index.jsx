@@ -4,7 +4,8 @@ import c from './More.module.scss'
 import Title from '../../components/Title'
 import { SlBasket } from 'react-icons/sl'
 import {BiMinus, BiPlus} from "react-icons/bi";
-import {GetProduct} from "../../helpers";
+import {GetProduct, ScrollToTop} from "../../helpers";
+import Loader from "../../components/Loader";
 
 const More = () => {
   const { id } = useParams()
@@ -14,6 +15,10 @@ const More = () => {
   const check = cart?.find(item => item?.id === Number(id))
   const index = cart?.findIndex(obj => obj.id === Number(id));
   const {product} = GetProduct(Number(id))
+  
+  React.useEffect(() => {
+    ScrollToTop()
+  }, [])
   
   React.useEffect(() => {
     const data = JSON.parse(localStorage.getItem('cart'))
@@ -49,6 +54,8 @@ const More = () => {
     localStorage.setItem('cart', JSON.stringify(cart));
   }
   
+  
+  if(!product) return <div className={c.loader}><Loader/></div>
   return (
     <div className={c.more}>
       <div className={c.title}>

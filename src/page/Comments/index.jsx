@@ -7,8 +7,7 @@ import { GetComments } from '../../helpers';
 
 function Comments(props) {
   const [ active, setActive ] = React.useState(false)
-  const { comments } = GetComments() 
-
+  const { comments } = GetComments()
   return (
     <div className={c.comments}>
       <Title title={'ОТЗЫВЫ И КОММЕНТАРИИ'}/>

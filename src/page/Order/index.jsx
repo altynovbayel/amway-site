@@ -3,6 +3,7 @@ import c from './Order.module.scss'
 import Title from "../../components/Title";
 import OrderCard from "./OrderCard";
 import OrderForm from "../../components/OrderForm";
+import {ScrollToTop} from "../../helpers";
 
 
 function Order() {
@@ -17,6 +18,9 @@ function Order() {
     }, 100)
   }, [dep])
   
+  React.useEffect(() => {
+    ScrollToTop()
+  }, [])
   
   return (
     <div className={c.cart}>
