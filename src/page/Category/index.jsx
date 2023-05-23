@@ -39,8 +39,10 @@ function Category() {
   }, [id])
   
   React.useEffect(() => {
-    setProductsCopy(data?.product_data.slice(firstContentIndex, lastContentIndex))
-  }, [currentPage, data])
+    data?.product_data.length > 20 ?
+    setProductsCopy(data?.product_data.slice(firstContentIndex, lastContentIndex)) :
+      setProductsCopy(data?.product_data)
+  }, [currentPage, data, id])
   
   const priceFilter = () => {
     const res = data?.product_data?.filter(el => el.price >= values[0] && el.price <= values[1])
