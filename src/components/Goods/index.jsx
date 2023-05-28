@@ -22,7 +22,7 @@ const Goods = () => {
   // pagination
   const [productsCopy, setProductsCopy] = React.useState([])
   const [currentPage, setCurrentPage] = React.useState(1)
-  const limit = 20
+  const limit = 10
   const pageCount = Math.ceil(products?.length / limit)
   const lastContentIndex = currentPage * limit;
   const firstContentIndex = lastContentIndex - limit;

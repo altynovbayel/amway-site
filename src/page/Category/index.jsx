@@ -23,7 +23,7 @@ function Category() {
   // pagination
   const [productsCopy, setProductsCopy] = React.useState([])
   const [currentPage, setCurrentPage] = React.useState(1)
-  const limit = 20
+  const limit = 10
   const pageCount = Math.ceil(data?.product_data.length / limit)
   const lastContentIndex = currentPage * limit;
   const firstContentIndex = lastContentIndex - limit;
@@ -39,7 +39,7 @@ function Category() {
   }, [id])
   
   React.useEffect(() => {
-    data?.product_data.length > 20 ?
+    data?.product_data.length > 10 ?
     setProductsCopy(data?.product_data.slice(firstContentIndex, lastContentIndex)) :
       setProductsCopy(data?.product_data)
   }, [currentPage, data, id])
@@ -198,7 +198,7 @@ function Category() {
         </span>
       </div>
       {
-        data?.product_data?.length > 20 &&
+        data?.product_data?.length > 10 &&
         <div className={c.pagination}>
           <Pagination pageCount={pageCount} current={currentPage} setCurrent={setCurrentPage}/>
         </div>
