@@ -22,18 +22,20 @@ const Cart = ({setActiveCart}) => {
 
   return (
     <div className={c.cart}>
-      {
-        !cart || cart.length === 0 ?
-        <div className={c.empty}>
-          <h2>Корзина пустая.</h2>
-        </div> :
-        cart?.map((item, i) => (
-          <CartCard 
-            key={i}
-            item={item}
-          />
-        ))
-      }
+      <div className={cart?.length > 3 ? c.cart_scroll : ''}>
+        {
+          !cart || cart.length === 0 ?
+            <div className={c.empty}>
+              <h2>Корзина пустая.</h2>
+            </div> :
+            cart?.map((item, i) => (
+              <CartCard 
+                key={i}
+                item={item}
+              />
+            ))
+        }
+      </div>
       {
         cart && cart?.length !== 0 ? 
         <div className={c.totalPrice}>

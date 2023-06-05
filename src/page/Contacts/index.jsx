@@ -23,13 +23,8 @@ function Contacts() {
           </div>
           <div className={c.numbers}>
             <p>
-              <Link to="tel:8 (985) 501-84-80">
-                8 (985) 501-84-80
-              </Link>
-            </p>
-            <p>
-              <Link to="tel:8 (985) 501-84-80">
-                8 (985) 501-84-80
+              <Link to="tel:89996920861">
+                8 (999) 692-08-61
               </Link>
             </p>
           </div>
@@ -43,8 +38,8 @@ function Contacts() {
           </div>
           <div className={c.numbers}>
             <p>
-              <Link to={"https://wa.me/89855018480"}>
-                8 (985) 501-84-80
+              <Link to={"https://wa.me/+79996920861"}>  
+                +7 (999) 692-08-61
               </Link>
             </p>
           </div>
