@@ -19,19 +19,24 @@ function OrderForm({setShow}) {
   
   React.useEffect(() => {
     ScrollToTop()
-    const cart = JSON.parse(localStorage.getItem('cart'))
-    console.log(`${cart[0]?.title} ${cart[0]?.count} * ${cart[0]?.price} = ${cart[0]?.price * cart[0]?.count }`)
-    console.log(
-      cart.map(item => `${item.title} - ${item.count}шт * ${item.price}руб = ${item.price * item.count }руб`)
-    )
   }, [])
   
   function send(data) {
-    api.postOrder({...data, product: 4 })
-      .then(() => {
-        setAlertActive(!alertActive)
-        reset()
-      })
+    const cart = JSON.parse(localStorage.getItem('cart'))
+    const prod = cart.map(item => {
+      return {
+          product : item.id,
+          quantity : item.count,
+      }
+    })
+    
+    api.postOrder({
+      ...data,
+      order_items: [...prod]
+    }).then(() => {
+      setAlertActive(!alertActive)
+      reset()
+    })
   }
   
   return (
@@ -43,14 +48,6 @@ function OrderForm({setShow}) {
             placeholder='Имя'
             className={errors.name ? c.error_inp : ''}
             {...register('name', {required: '⚠ Обязательное поле'})}
-          />
-        </div>
-        <div>
-          <input
-            type="email"
-            placeholder='E-mail'
-            className={errors.email ? c.error_inp : ''}
-            {...register('gmail', {required: '⚠ Обязательное поле'})}
           />
         </div>
         <div>
@@ -78,6 +75,12 @@ function OrderForm({setShow}) {
             {...register('comment', {required: '⚠ Обязательное поле'})}
           />
         </div>
+        <div className={c.check}>
+          <label htmlFor="delivery">
+            С доставкой
+            <input type="checkbox" id='delivery'/>
+          </label>
+        </div>
         <div className={c.form_buttons}>
          <span onClick={() => setShow(false)}>
            НАЗАД
@@ -86,6 +89,7 @@ function OrderForm({setShow}) {
             Отправить заявку
           </button>
         </div>
+        
       </form>
 
       {
