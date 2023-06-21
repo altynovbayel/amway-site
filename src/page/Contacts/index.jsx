@@ -38,8 +38,8 @@ function Contacts() {
           </div>
           <div className={c.numbers}>
             <p>
-              <Link to={"https://wa.me/+79996920861"}>  
-                +7 (999) 692-08-61
+              <Link to={"https://wa.me/+79268407265"}>  
+                +7 (926) 840-72-65
               </Link>
             </p>
           </div>

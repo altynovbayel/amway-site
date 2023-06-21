@@ -49,51 +49,53 @@ const Form = () => {
   }
 
   return (
-    <div className={c.form}>
-      <h1>Заполните форму</h1>
-      <p>Оставьте заявку прямо сейчас, мы свяжемся с Вами незамедлительно!</p>
-      <form onSubmit={handleSubmit(data => handleSend(data))}>
-        <div>
-          <input 
-            type="text" 
-            placeholder='Ваше имя' 
-            className={nameError ? c.error : null}
-            {...register('name')}
-          />
-        </div>
-        <div>
-          <input 
-            type="text" 
-            placeholder='Контактный телефон' 
-            className={phoneError ? c.error : null}
-            {...register('phone_number')}
-          />
-        </div>
-        <div>
-          <input 
-            type="email" 
-            placeholder='E-mail' 
-            className={gmailError ? c.error : null}
-            {...register('gmail')}
-          />
-        </div>
-        <button type='submit'>
-          Отправить заявку
-        </button>
-      </form>
-      {
-        alertActive ?
-          <Alert
-            item={{
-              title: 'Спасибо за заказ!',
-              comment: '',
-              icon: 'success'
-            }}
-            setActive={setAlertActive}
-          />
-          :
-          null
-      }
+    <div className={c.form_container}>
+      <div className={c.form}>
+        <h1>Заполните форму</h1>
+        <p>Оставьте заявку прямо сейчас, мы свяжемся с Вами незамедлительно!</p>
+        <form onSubmit={handleSubmit(data => handleSend(data))}>
+          <div>
+            <input 
+              type="text" 
+              placeholder='Ваше имя' 
+              className={nameError ? c.error : null}
+              {...register('name')}
+            />
+          </div>
+          <div>
+            <input 
+              type="text" 
+              placeholder='Контактный телефон' 
+              className={phoneError ? c.error : null}
+              {...register('phone_number')}
+            />
+          </div>
+          <div>
+            <input 
+              type="email" 
+              placeholder='E-mail' 
+              className={gmailError ? c.error : null}
+              {...register('gmail')}
+            />
+          </div>
+          <button type='submit'>
+            Отправить заявку
+          </button>
+        </form>
+        {
+          alertActive ?
+            <Alert
+              item={{
+                title: 'Спасибо за заказ!',
+                comment: '',
+                icon: 'success'
+              }}
+              setActive={setAlertActive}
+            />
+            :
+            null
+        }
+      </div>
     </div>
   )
 }
