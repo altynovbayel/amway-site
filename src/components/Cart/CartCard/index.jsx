@@ -20,6 +20,7 @@ const CartCard = ({item}) => {
     }
     localStorage.setItem('cart', JSON.stringify(cart));
   }
+
   return (
     <div 
       className={c.card}
