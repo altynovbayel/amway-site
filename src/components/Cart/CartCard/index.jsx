@@ -22,9 +22,7 @@ const CartCard = ({item}) => {
   }
 
   return (
-    <div 
-      className={c.card}
-    >
+    <div className={c.card}>
       <div className={c.left}>
         <img src={item.image} alt="" />
         <p>{item.title.length > 30 ? `${item.title.slice(0, 30)}...` : item.title}</p>

@@ -7,6 +7,7 @@ import {ScrollToTop} from "../../helpers";
 
 function OrderForm({setShow}) {
   const [ alertActive, setAlertActive ] = React.useState(false)
+  const [delivery, setDelivery] = React.useState(false)
 
   const {
     register,
@@ -58,15 +59,6 @@ function OrderForm({setShow}) {
             {...register('phone_number', {required: '⚠ Обязательное поле'})}
           />
         </div>
-        
-        <div>
-          <input
-            type="text"
-            placeholder='Адрес доставки'
-            className={errors.address ? c.error_inp : ''}
-            {...register('address', {required: '⚠ Обязательное поле'})}
-          />
-        </div>
         <div>
           <input
             type="text"
@@ -75,10 +67,21 @@ function OrderForm({setShow}) {
             {...register('comment', {required: '⚠ Обязательное поле'})}
           />
         </div>
+        {
+          delivery &&
+          <div>
+            <input
+              type="text"
+              placeholder='Адрес доставки'
+              className={errors.address ? c.error_inp : ''}
+              {...register('address', {required: '⚠ Обязательное поле'})}
+            />
+          </div>
+        }
         <div className={c.check}>
           <label htmlFor="delivery">
             С доставкой
-            <input type="checkbox" id='delivery'/>
+            <input type="checkbox" id='delivery'onClick={() => setDelivery(p => !p)}/>
           </label>
         </div>
         <div className={c.form_buttons}>
