@@ -97,7 +97,7 @@ function OrderForm({setShow}) {
          <span onClick={() => setShow(false)}>
            НАЗАД
          </span>
-          <button type='submit' disabled={!isValid}>
+          <button type='submit' disabled={!isValid} className={isValid ? c.active : ''}>
             Отправить заявку
           </button>
         </div>
