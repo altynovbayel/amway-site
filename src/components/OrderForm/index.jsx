@@ -26,13 +26,14 @@ function OrderForm({setShow}) {
     const cart = JSON.parse(localStorage.getItem('cart'))
     const prod = cart.map(item => {
       return {
-          product : item.id,
-          quantity : item.count,
+        product : item.id,
+        quantity : item.count,
       }
     })
     
     api.postOrder({
       ...data,
+      address: !delivery ? 'Без доставки' : data.address,
       order_items: [...prod]
     }).then(() => {
       setAlertActive(!alertActive)
@@ -49,6 +50,14 @@ function OrderForm({setShow}) {
             placeholder='Имя'
             className={errors.name ? c.error_inp : ''}
             {...register('name', {required: '⚠ Обязательное поле'})}
+          />
+        </div>
+        <div>
+          <input
+            type="email"
+            placeholder='Email'
+            className={errors.email ? c.error_inp : ''}
+            {...register('gmail', {required: '⚠ Обязательное поле'})}
           />
         </div>
         <div>
