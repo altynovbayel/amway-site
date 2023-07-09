@@ -9,7 +9,7 @@ axios.defaults.baseURL = 'https://amway.pythonanywhere.com'
 function App() {
   return (
     <div className="App">
-      <Navbar/>
+      {/* <Navbar/>
       <Switch>
         <Route path='/' element={<Layout.Main/>}/>
         <Route path='*' element={<Layout.Main/>}/>
@@ -20,7 +20,7 @@ function App() {
         <Route path='/products/category/:id' element={<Layout.Category/>}/>
         <Route path='/cart/' element={<Layout.Order/>}/>
       </Switch>
-      <Footer />
+      <Footer /> */}
     </div>
   );
 }

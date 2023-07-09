@@ -24,6 +24,7 @@ const Goods = () => {
   const [currentPage, setCurrentPage] = React.useState(1)
   const limit = 10
   const pageCount = Math.ceil(products?.length / limit)
+
   const lastContentIndex = currentPage * limit;
   const firstContentIndex = lastContentIndex - limit;
   
@@ -47,7 +48,7 @@ const Goods = () => {
     ScrollToTop()
     const cart = localStorage.getItem('cart')
     !cart && localStorage.setItem('cart', JSON.stringify([]))
-
+    
     api.getCategories()
       .then(res => {
         setCategories(res.data)
@@ -56,6 +57,7 @@ const Goods = () => {
   
   React.useEffect(() => {
     setProductsCopy(products?.slice(firstContentIndex, lastContentIndex))
+    
   }, [currentPage, products])
   
   
