@@ -23,7 +23,7 @@ const GoodsCard = ({image, title, price, id, obj}) => {
   }, [dep])
 
   const postToCart = () => {
-    !check ? cart?.push({...obj, count: 1, image: image.slice(32, image.length).length < 32 ? `http://amway-site.netlify.app${image}` : image}) : cart[index].count = cart[index].count + 1;
+    !check ? cart?.push({...obj, count: 1, image: image}) : cart[index].count = cart[index].count + 1;
     localStorage.setItem('cart', JSON.stringify(cart))
     if(window.innerWidth > 768){
       setActiveCart(true)
